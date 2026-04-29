@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+papers.db
+agent.log
+agent.err.log

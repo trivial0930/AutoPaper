@@ -1,0 +1,70 @@
+name: Daily VLA/CV Papers
+
+on:
+  schedule:
+    # 09:00 Asia/Shanghai.
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Lookback window in days"
+        required: false
+        default: "2"
+      no_llm:
+        description: "Disable OpenAI classification and summarization"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      skip_semantic:
+        description: "Skip Semantic Scholar enrichment"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+jobs:
+  daily-papers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
+
+      - name: Generate daily report
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        run: |
+          DAYS="${{ github.event.inputs.days || '2' }}"
+          EXTRA_ARGS=""
+          if [ "${{ github.event.inputs.no_llm || 'false' }}" = "true" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --no-llm"
+          fi
+          if [ "${{ github.event.inputs.skip_semantic || 'false' }}" = "true" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --skip-semantic"
+          fi
+          python -m paper_agents run --config config.json --days "$DAYS" $EXTRA_ARGS --json-out latest_papers.json
+
+      - name: Commit report
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update daily paper report"
+          file_pattern: "daily_papers/*.md latest_papers.json"

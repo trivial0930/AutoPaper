@@ -1,0 +1,56 @@
+{
+  "sources": {
+    "arxiv_categories": ["cs.CV", "cs.RO", "cs.AI", "cs.LG"],
+    "lookback_days": 2,
+    "max_results_per_category": 50,
+    "vla_keywords": [
+      "vision-language-action",
+      "vision language action",
+      "vla",
+      "embodied ai",
+      "embodied agent",
+      "robot learning",
+      "robotics foundation model",
+      "visuomotor",
+      "manipulation",
+      "navigation",
+      "diffusion policy",
+      "action generation",
+      "language-conditioned",
+      "vision-language navigation",
+      "vlm policy",
+      "open-vocabulary manipulation"
+    ],
+    "cv_keywords": [
+      "computer vision",
+      "object detection",
+      "segmentation",
+      "tracking",
+      "3d vision",
+      "video understanding",
+      "image generation",
+      "visual representation",
+      "multimodal",
+      "vision-language",
+      "open vocabulary",
+      "visual grounding"
+    ]
+  },
+  "semantic_scholar": {
+    "enabled": true,
+    "sleep_seconds": 1.0
+  },
+  "llm": {
+    "enabled": true,
+    "provider": "openai",
+    "model": "gpt-4.1-mini"
+  },
+  "publisher": {
+    "output_dir": "daily_papers",
+    "top_k": 12,
+    "include_irrelevant": false
+  },
+  "database": {
+    "path": "papers.db"
+  }
+}
