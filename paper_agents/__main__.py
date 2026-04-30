@@ -7,9 +7,10 @@ from datetime import datetime, time, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from .agents import NotifierAgent, WorkflowAgent, papers_to_jsonable
+from .agents import CuratorAgent, NotifierAgent, WorkflowAgent, papers_to_jsonable
 from .config import load_config
 from .db import PaperStore
+from .models import Paper
 
 
 def main() -> None:
@@ -38,6 +39,13 @@ def main() -> None:
     feishu_parser.add_argument("--config", default="config.json")
     feishu_parser.add_argument("--message", default="论文日报测试：飞书机器人推送已连通。")
 
+    notify_parser = subparsers.add_parser("notify-feishu", help="Send selected papers from a JSON file to Feishu.")
+    notify_parser.add_argument("--config", default="config.json")
+    notify_parser.add_argument("--json", default="latest_papers.json", help="JSON file produced by run --json-out.")
+    notify_parser.add_argument("--date", help="Report date in YYYY-MM-DD. Defaults to today.")
+    notify_parser.add_argument("--timezone", default="Asia/Shanghai")
+    notify_parser.add_argument("--report", help="Optional report path to mention in the Feishu message.")
+
     args = parser.parse_args()
     if args.command == "init-config":
         init_config(args.target)
@@ -45,6 +53,8 @@ def main() -> None:
         run(args)
     elif args.command == "test-feishu":
         test_feishu(args)
+    elif args.command == "notify-feishu":
+        notify_feishu(args)
 
 
 def init_config(target: str) -> None:
@@ -95,6 +105,22 @@ def test_feishu(args: argparse.Namespace) -> None:
         raise SystemExit("FEISHU_WEBHOOK_URL is not configured.")
     notifier.client.send_text(args.message)
     print("Feishu test notification sent.")
+
+
+def notify_feishu(args: argparse.Namespace) -> None:
+    config = load_config(args.config if Path(args.config).exists() else None)
+    json_path = Path(args.json)
+    if not json_path.exists():
+        raise SystemExit(f"{json_path} does not exist. Run with --json-out first.")
+    with json_path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    papers = [Paper(**item) for item in payload]
+    selected = CuratorAgent(config).run(papers)
+    notifier = NotifierAgent(config)
+    if not notifier.available():
+        raise SystemExit("FEISHU_WEBHOOK_URL is not configured.")
+    report = Path(args.report) if args.report else None
+    notifier.run(selected, run_date=_parse_run_date(args.date, args.timezone), report=report)
 
 
 def _parse_run_date(value: str | None, timezone_name: str) -> datetime:

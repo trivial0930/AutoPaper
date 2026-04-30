@@ -242,6 +242,14 @@ export FEISHU_SECRET="可选，如果开启签名校验才需要"
 python3 -m paper_agents run --config config.json --days 1 --notify-feishu
 ```
 
+用已经生成的 `latest_papers.json` 单独推送飞书：
+
+```bash
+export FEISHU_WEBHOOK_URL="你的 Webhook URL"
+export FEISHU_SECRET="可选，如果开启签名校验才需要"
+python3 -m paper_agents notify-feishu --config config.json --json latest_papers.json
+```
+
 只测试飞书机器人连通性：
 
 ```bash
@@ -250,9 +258,8 @@ export FEISHU_SECRET="可选，如果开启签名校验才需要"
 python3 -m paper_agents test-feishu
 ```
 
-如果 GitHub Actions 没有推送到飞书，先看 `Generate daily report` 这一步日志：
+如果 GitHub Actions 没有推送到飞书，先看 `Send Feishu notification` 这一步日志：
 
-- `Feishu webhook configured; notification will be sent.` 表示 secret 已读取，会尝试发送。
 - `FEISHU_WEBHOOK_URL is not configured` 表示 GitHub Secret 名称没配对。
 - `Feishu notification failed` 后面的错误通常是签名密钥、关键词校验或 Webhook 地址问题。
 
