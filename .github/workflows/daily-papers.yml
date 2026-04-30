@@ -30,6 +30,9 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   daily-papers:
     runs-on: ubuntu-latest
@@ -37,10 +40,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -71,7 +74,7 @@ jobs:
           python -m paper_agents run --config config.json --days "$DAYS" $EXTRA_ARGS --json-out latest_papers.json
 
       - name: Commit report
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: update daily paper report"
           file_pattern: "daily_papers/*.md latest_papers.json"
