@@ -165,6 +165,7 @@ python3 -m paper_agents run --config config.json --json-out papers.json
 - 抓取最近 `2` 天的 arXiv 论文
 - 可选调用 OpenAI 和 Semantic Scholar
 - 生成 `daily_papers/YYYY-MM-DD.md`
+- 如果配置了飞书 Webhook，把论文一句话总结推送到飞书群
 - 把日报和 `latest_papers.json` 自动提交回仓库
 
 如果你想启用 DeepSeek 总结，需要在 GitHub 仓库设置里添加 secret：
@@ -183,6 +184,58 @@ Settings -> Secrets and variables -> Actions -> New repository secret
 ```text
 DEEPSEEK_MODEL=deepseek-v4-flash
 ```
+
+### 推送到飞书
+
+推荐使用飞书群的“自定义机器人”：
+
+1. 打开目标飞书群。
+2. 进入 `群设置 -> 群机器人 -> 添加机器人 -> 自定义机器人`。
+3. 创建机器人后复制 Webhook URL，格式类似：
+
+```text
+https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+```
+
+4. 在 GitHub 仓库里添加 secret：
+
+```text
+Settings -> Secrets and variables -> Actions -> New repository secret
+```
+
+必填：
+
+```text
+FEISHU_WEBHOOK_URL=你的飞书机器人 Webhook URL
+```
+
+如果你在飞书机器人安全设置里开启了“签名校验”，再添加：
+
+```text
+FEISHU_SECRET=飞书机器人签名密钥
+```
+
+然后去 `Actions -> Daily VLA/CV Papers -> Run workflow` 手动跑一次。成功后，飞书群会收到类似：
+
+```text
+论文日报 | VLA & CV | 2026-04-30
+今日精选 12 篇
+
+1. Paper Title
+标签：VLA, Robot Learning | 分数：4.8/5
+一句话总结：本文提出……
+链接：https://arxiv.org/abs/xxxx.xxxxx
+```
+
+本地测试飞书推送：
+
+```bash
+export FEISHU_WEBHOOK_URL="你的 Webhook URL"
+export FEISHU_SECRET="可选，如果开启签名校验才需要"
+python3 -m paper_agents run --config config.json --days 1 --notify-feishu
+```
+
+如果你的飞书机器人设置了“关键词校验”，请把关键词设为 `论文日报`，因为推送正文会包含这个词。
 
 ### macOS / Linux cron
 

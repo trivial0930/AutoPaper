@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import base64
+import hashlib
+import hmac
 import json
 import os
 import time
@@ -223,6 +226,36 @@ class OpenAIClient:
             return ""
         message = choices[0].get("message", {})
         return str(message.get("content", "")).strip()
+
+
+class FeishuClient:
+    def __init__(self, webhook_url: str, secret: str = ""):
+        self.webhook_url = webhook_url
+        self.secret = secret
+
+    def send_text(self, text: str) -> bool:
+        if not self.webhook_url:
+            return False
+        payload: dict[str, Any] = {
+            "msg_type": "text",
+            "content": {"text": text},
+        }
+        if self.secret:
+            timestamp = str(int(time.time()))
+            payload["timestamp"] = timestamp
+            payload["sign"] = _feishu_sign(timestamp, self.secret)
+        data = _request_json(self.webhook_url, data=payload)
+        code = data.get("code", data.get("StatusCode", 0))
+        if code not in (0, "0", None):
+            message = data.get("msg") or data.get("StatusMessage") or data
+            raise RuntimeError(f"Feishu notification failed: {message}")
+        return True
+
+
+def _feishu_sign(timestamp: str, secret: str) -> str:
+    string_to_sign = f"{timestamp}\n{secret}"
+    digest = hmac.new(string_to_sign.encode("utf-8"), b"", digestmod=hashlib.sha256).digest()
+    return base64.b64encode(digest).decode("utf-8")
 
 
 def _extract_response_text(data: dict[str, Any]) -> str:

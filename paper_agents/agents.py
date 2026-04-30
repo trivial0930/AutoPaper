@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import json
+import os
 from dataclasses import asdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from .clients import ArxivClient, OpenAIClient, SemanticScholarClient
+from .clients import ArxivClient, FeishuClient, OpenAIClient, SemanticScholarClient
 from .config import AppConfig
 from .models import Paper
 
@@ -229,6 +230,49 @@ class PublisherAgent:
         return "\n".join(lines)
 
 
+class NotifierAgent:
+    """Sends the selected daily papers to Feishu."""
+
+    def __init__(self, config: AppConfig, client: FeishuClient | None = None):
+        self.config = config
+        self.webhook_url = os.environ.get("FEISHU_WEBHOOK_URL", "")
+        self.client = client or FeishuClient(
+            webhook_url=self.webhook_url,
+            secret=os.environ.get("FEISHU_SECRET", ""),
+        )
+
+    def available(self) -> bool:
+        return bool(self.webhook_url)
+
+    def run(self, papers: list[Paper], *, run_date: datetime, report: Path | None = None) -> bool:
+        if not self.available():
+            return False
+        return self.client.send_text(self._render_text(papers, run_date, report))
+
+    def _render_text(self, papers: list[Paper], run_date: datetime, report: Path | None) -> str:
+        lines = [
+            f"论文日报 | VLA & CV | {run_date.date().isoformat()}",
+            f"今日精选 {len(papers)} 篇",
+            "",
+        ]
+        for index, paper in enumerate(papers, start=1):
+            tags = ", ".join(paper.tags) or "未分类"
+            lines.extend(
+                [
+                    f"{index}. {paper.title}",
+                    f"标签：{tags} | 分数：{paper.relevance_score:.1f}/5",
+                    f"一句话总结：{paper.summary}",
+                    f"链接：{paper.abs_url}",
+                    "",
+                ]
+            )
+        if not papers:
+            lines.append("今天没有筛到符合条件的论文。")
+        if report:
+            lines.append(f"完整日报已生成：{report}")
+        return "\n".join(lines).strip()
+
+
 class WorkflowAgent:
     """Orchestrates the full daily paper workflow."""
 
@@ -239,14 +283,17 @@ class WorkflowAgent:
         self.summarizer = SummarizerAgent(config)
         self.curator = CuratorAgent(config)
         self.publisher = PublisherAgent(config)
+        self.notifier = NotifierAgent(config)
 
-    def run(self, *, run_date: datetime, days: int | None = None) -> tuple[list[Paper], list[Paper], Path]:
+    def run(self, *, run_date: datetime, days: int | None = None, notify_feishu: bool = False) -> tuple[list[Paper], list[Paper], Path]:
         papers = self.collector.run(run_date=run_date, days=days)
         papers = self.metadata.run(papers)
         papers = self.classifier.run(papers)
         papers = self.summarizer.run(papers)
         selected = self.curator.run(papers)
         report = self.publisher.run(selected, run_date=run_date)
+        if notify_feishu:
+            self.notifier.run(selected, run_date=run_date, report=report)
         return papers, selected, report
 
 

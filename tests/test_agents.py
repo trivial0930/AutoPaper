@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import unittest
 
-from paper_agents.agents import ClassifierAgent, CuratorAgent
+from datetime import datetime, timezone
+
+from paper_agents.agents import ClassifierAgent, CuratorAgent, NotifierAgent
 from paper_agents.config import AppConfig, SourceConfig
 from paper_agents.models import Paper
 
@@ -40,6 +42,25 @@ class AgentTests(unittest.TestCase):
         irrelevant = Paper("2", "b", [], "", "", "", [], relevance_score=0, priority="skip")
         selected = CuratorAgent(config).run([irrelevant, relevant])
         self.assertEqual([paper.paper_id for paper in selected], ["1"])
+
+    def test_notifier_text_contains_summary(self) -> None:
+        config = self.make_config()
+        paper = Paper(
+            paper_id="2501.00001",
+            title="A Useful VLA Paper",
+            authors=[],
+            abstract="",
+            published="",
+            updated="",
+            categories=["cs.CV"],
+            abs_url="https://arxiv.org/abs/2501.00001",
+            tags=["VLA"],
+            relevance_score=4.2,
+            summary="本文提出统一策略模型提升机器人操作泛化。",
+        )
+        text = NotifierAgent(config)._render_text([paper], datetime(2026, 4, 30, tzinfo=timezone.utc), None)
+        self.assertIn("论文日报", text)
+        self.assertIn("一句话总结：本文提出统一策略模型提升机器人操作泛化。", text)
 
 
 if __name__ == "__main__":

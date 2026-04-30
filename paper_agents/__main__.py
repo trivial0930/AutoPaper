@@ -25,6 +25,7 @@ def main() -> None:
     run_parser.add_argument("--no-llm", action="store_true", help="Disable OpenAI summarization/classification.")
     run_parser.add_argument("--skip-semantic", action="store_true", help="Skip Semantic Scholar enrichment.")
     run_parser.add_argument("--json-out", help="Optional path for full JSON output.")
+    run_parser.add_argument("--notify-feishu", action="store_true", help="Send selected papers to Feishu webhook.")
 
     args = parser.parse_args()
     if args.command == "init-config":
@@ -51,7 +52,7 @@ def run(args: argparse.Namespace) -> None:
 
     run_date = _parse_run_date(args.date)
     workflow = WorkflowAgent(config)
-    all_papers, selected, report = workflow.run(run_date=run_date, days=args.days)
+    all_papers, selected, report = workflow.run(run_date=run_date, days=args.days, notify_feishu=args.notify_feishu)
 
     store = PaperStore(config.database.path)
     try:
