@@ -46,7 +46,7 @@ class ClassifierAgent:
 
     def __init__(self, config: AppConfig, llm: OpenAIClient | None = None):
         self.config = config
-        self.llm = llm or OpenAIClient(config.llm.model)
+        self.llm = llm or OpenAIClient(config.llm.model, config.llm.provider)
 
     def run(self, papers: list[Paper]) -> list[Paper]:
         for paper in papers:
@@ -129,7 +129,7 @@ class SummarizerAgent:
 
     def __init__(self, config: AppConfig, llm: OpenAIClient | None = None):
         self.config = config
-        self.llm = llm or OpenAIClient(config.llm.model)
+        self.llm = llm or OpenAIClient(config.llm.model, config.llm.provider)
 
     def run(self, papers: list[Paper]) -> list[Paper]:
         for paper in papers:

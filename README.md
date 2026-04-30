@@ -37,13 +37,13 @@ python3 -m paper_agents init-config
 - `daily_papers/YYYY-MM-DD.md`：每日论文日报
 - `papers.db`：SQLite 论文库
 
-## 使用 OpenAI 生成高质量总结
+## 使用 DeepSeek 生成高质量总结
 
-设置环境变量：
+默认配置使用 DeepSeek。设置环境变量：
 
 ```bash
-export OPENAI_API_KEY="你的 API key"
-export OPENAI_MODEL="gpt-4.1-mini"
+export DEEPSEEK_API_KEY="你的 API key"
+export DEEPSEEK_MODEL="deepseek-v4-flash"
 ```
 
 然后运行：
@@ -52,7 +52,34 @@ export OPENAI_MODEL="gpt-4.1-mini"
 python3 -m paper_agents run --config config.json
 ```
 
-如果没有设置 `OPENAI_API_KEY`，系统会自动退回规则分类和 Semantic Scholar TLDR/标题摘要。
+如果没有设置 `DEEPSEEK_API_KEY`，系统会自动退回规则分类和 Semantic Scholar TLDR/标题摘要。
+
+## 切换到 OpenAI
+
+设置环境变量：
+
+```bash
+export OPENAI_API_KEY="你的 API key"
+export OPENAI_MODEL="gpt-4.1-mini"
+```
+
+并把 `config.json` 里的 `llm.provider` 改成 `openai`：
+
+```json
+{
+  "llm": {
+    "enabled": true,
+    "provider": "openai",
+    "model": "gpt-4.1-mini"
+  }
+}
+```
+
+然后运行：
+
+```bash
+python3 -m paper_agents run --config config.json
+```
 
 ## 使用 Semantic Scholar
 
@@ -140,9 +167,9 @@ python3 -m paper_agents run --config config.json --json-out papers.json
 - 生成 `daily_papers/YYYY-MM-DD.md`
 - 把日报和 `latest_papers.json` 自动提交回仓库
 
-如果你想启用 LLM 总结，需要在 GitHub 仓库设置里添加 secret：
+如果你想启用 DeepSeek 总结，需要在 GitHub 仓库设置里添加 secret：
 
-- `OPENAI_API_KEY`
+- `DEEPSEEK_API_KEY`
 - `SEMANTIC_SCHOLAR_API_KEY`，可选
 
 路径：
@@ -154,7 +181,7 @@ Settings -> Secrets and variables -> Actions -> New repository secret
 如果想改模型，可以添加 repository variable：
 
 ```text
-OPENAI_MODEL=gpt-4.1-mini
+DEEPSEEK_MODEL=deepseek-v4-flash
 ```
 
 ### macOS / Linux cron

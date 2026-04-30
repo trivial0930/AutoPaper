@@ -161,9 +161,10 @@ class SemanticScholarClient:
 class OpenAIClient:
     base_url = "https://api.openai.com/v1/responses"
 
-    def __init__(self, model: str):
-        self.model = os.environ.get("OPENAI_MODEL", model)
-        self.api_key = os.environ.get("OPENAI_API_KEY", "")
+    def __init__(self, model: str, provider: str = "openai"):
+        self.provider = os.environ.get("LLM_PROVIDER", provider).lower()
+        self.model = self._model_from_env(model)
+        self.api_key = self._api_key_from_env()
 
     @property
     def available(self) -> bool:
@@ -171,7 +172,22 @@ class OpenAIClient:
 
     def complete(self, system: str, user: str) -> str:
         if not self.api_key:
-            raise RuntimeError("OPENAI_API_KEY is not set")
+            raise RuntimeError(f"{self.provider} API key is not set")
+        if self.provider == "deepseek":
+            return self._deepseek_complete(system, user)
+        return self._openai_complete(system, user)
+
+    def _model_from_env(self, default: str) -> str:
+        if self.provider == "deepseek":
+            return os.environ.get("DEEPSEEK_MODEL", default)
+        return os.environ.get("OPENAI_MODEL", default)
+
+    def _api_key_from_env(self) -> str:
+        if self.provider == "deepseek":
+            return os.environ.get("DEEPSEEK_API_KEY", "")
+        return os.environ.get("OPENAI_API_KEY", "")
+
+    def _openai_complete(self, system: str, user: str) -> str:
         payload = {
             "model": self.model,
             "input": [
@@ -187,6 +203,26 @@ class OpenAIClient:
         if data.get("output_text"):
             return str(data["output_text"]).strip()
         return _extract_response_text(data).strip()
+
+    def _deepseek_complete(self, system: str, user: str) -> str:
+        payload = {
+            "model": self.model,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            "stream": False,
+        }
+        data = _request_json(
+            "https://api.deepseek.com/chat/completions",
+            headers={"Authorization": f"Bearer {self.api_key}", "User-Agent": USER_AGENT},
+            data=payload,
+        )
+        choices = data.get("choices", [])
+        if not choices:
+            return ""
+        message = choices[0].get("message", {})
+        return str(message.get("content", "")).strip()
 
 
 def _extract_response_text(data: dict[str, Any]) -> str:

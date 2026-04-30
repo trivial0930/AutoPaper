@@ -42,8 +42,8 @@
   },
   "llm": {
     "enabled": true,
-    "provider": "openai",
-    "model": "gpt-4.1-mini"
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash"
   },
   "publisher": {
     "output_dir": "daily_papers",
