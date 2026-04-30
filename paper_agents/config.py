@@ -13,6 +13,7 @@ class SourceConfig:
     max_results_per_category: int = 50
     vla_keywords: list[str] = field(default_factory=list)
     cv_keywords: list[str] = field(default_factory=list)
+    world_model_keywords: list[str] = field(default_factory=list)
 
 
 @dataclass

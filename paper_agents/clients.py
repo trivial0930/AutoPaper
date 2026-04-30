@@ -267,7 +267,11 @@ class FeishuClient:
             timestamp = str(int(time.time()))
             payload["timestamp"] = timestamp
             payload["sign"] = _feishu_sign(timestamp, self.secret)
-        data = _request_json(self.webhook_url, data=payload)
+        try:
+            data = _request_json(self.webhook_url, data=payload)
+        except urllib.error.HTTPError as error:
+            body = error.read().decode("utf-8", errors="replace")
+            raise RuntimeError(f"Feishu notification failed with HTTP {error.code}: {body}") from error
         code = data.get("code", data.get("StatusCode", 0))
         if code not in (0, "0", None):
             message = data.get("msg") or data.get("StatusMessage") or data

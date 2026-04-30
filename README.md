@@ -120,6 +120,7 @@ python3 -m paper_agents run --config config.json --skip-semantic
 
 - 想多抓一点：提高 `max_results_per_category`
 - 想更偏 VLA：扩充 `vla_keywords`
+- 想更偏 World Model：扩充 `world_model_keywords`
 - 想看更多论文：提高 `publisher.top_k`
 - 想调试分类：把 `include_irrelevant` 设为 `true`
 
@@ -224,7 +225,7 @@ FEISHU_SECRET=飞书机器人签名密钥
 然后去 `Actions -> Daily VLA/CV Papers -> Run workflow` 手动跑一次。成功后，飞书群会收到类似：
 
 ```text
-论文日报 | VLA & CV | 2026-04-30
+论文日报 | VLA / CV / World Model | 2026-04-30
 今日精选 12 篇
 
 1. Paper Title
@@ -240,6 +241,20 @@ export FEISHU_WEBHOOK_URL="你的 Webhook URL"
 export FEISHU_SECRET="可选，如果开启签名校验才需要"
 python3 -m paper_agents run --config config.json --days 1 --notify-feishu
 ```
+
+只测试飞书机器人连通性：
+
+```bash
+export FEISHU_WEBHOOK_URL="你的 Webhook URL"
+export FEISHU_SECRET="可选，如果开启签名校验才需要"
+python3 -m paper_agents test-feishu
+```
+
+如果 GitHub Actions 没有推送到飞书，先看 `Generate daily report` 这一步日志：
+
+- `Feishu webhook configured; notification will be sent.` 表示 secret 已读取，会尝试发送。
+- `FEISHU_WEBHOOK_URL is not configured` 表示 GitHub Secret 名称没配对。
+- `Feishu notification failed` 后面的错误通常是签名密钥、关键词校验或 Webhook 地址问题。
 
 如果你的飞书机器人设置了“关键词校验”，请把关键词设为 `论文日报`，因为推送正文会包含这个词。
 

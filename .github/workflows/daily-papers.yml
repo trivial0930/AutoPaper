@@ -87,7 +87,10 @@ jobs:
             EXTRA_ARGS="$EXTRA_ARGS --since-last-sunday --timezone Asia/Shanghai"
           fi
           if [ -n "$FEISHU_WEBHOOK_URL" ]; then
+            echo "Feishu webhook configured; notification will be sent."
             EXTRA_ARGS="$EXTRA_ARGS --notify-feishu"
+          else
+            echo "::warning::FEISHU_WEBHOOK_URL is not configured; Feishu notification will be skipped."
           fi
           python -m paper_agents run --config config.json --days "$DAYS" $EXTRA_ARGS --json-out latest_papers.json
 

@@ -37,6 +37,22 @@ class AgentTests(unittest.TestCase):
         self.assertGreaterEqual(paper.relevance_score, 4.0)
         self.assertEqual(paper.priority, "must_read")
 
+    def test_classifier_finds_world_model_paper(self) -> None:
+        config = self.make_config()
+        config.sources.world_model_keywords = ["world model", "latent dynamics", "future prediction"]
+        paper = Paper(
+            paper_id="2501.00002",
+            title="Learning Latent World Models for Future Prediction",
+            authors=[],
+            abstract="We build a world model with latent dynamics for planning.",
+            published="",
+            updated="",
+            categories=["cs.LG"],
+        )
+        ClassifierAgent(config).classify(paper)
+        self.assertIn("World Model", paper.tags)
+        self.assertGreaterEqual(paper.relevance_score, 2.5)
+
     def test_curator_skips_irrelevant_by_default(self) -> None:
         config = self.make_config()
         relevant = Paper("1", "a", [], "", "", "", [], relevance_score=3, priority="read")

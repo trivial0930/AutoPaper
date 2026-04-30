@@ -34,6 +34,27 @@
       "vision-language",
       "open vocabulary",
       "visual grounding"
+    ],
+    "world_model_keywords": [
+      "world model",
+      "world models",
+      "worldmodel",
+      "world-model",
+      "latent world model",
+      "visual world model",
+      "video world model",
+      "generative world model",
+      "action-conditioned prediction",
+      "action conditioned prediction",
+      "model-based reinforcement learning",
+      "model based reinforcement learning",
+      "latent dynamics",
+      "dynamics model",
+      "predictive model",
+      "future prediction",
+      "environment model",
+      "simulation model",
+      "mental model"
     ]
   },
   "semantic_scholar": {

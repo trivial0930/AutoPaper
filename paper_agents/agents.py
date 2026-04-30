@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from dataclasses import asdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -64,12 +65,12 @@ class ClassifierAgent:
     def _classify_with_llm(self, paper: Paper) -> bool:
         system = (
             "你是一个论文筛选 Agent，专门判断论文是否属于 VLA、CV、Robot Learning、"
-            "Embodied AI 或 Multimodal AI。只输出 JSON。"
+            "Embodied AI、Multimodal AI 或 World Model。只输出 JSON。"
         )
         user = f"""
 请阅读标题和摘要，输出 JSON：
 {{
-  "tags": ["VLA" 或 "CV" 等标签],
+  "tags": ["VLA"、"CV"、"World Model" 等标签],
   "relevance_score": 0 到 5 的数字,
   "priority": "must_read" | "read" | "skim" | "skip",
   "reason": "不超过 30 个中文字符的理由"
@@ -98,10 +99,14 @@ class ClassifierAgent:
 
         vla_hits = [keyword for keyword in self.config.sources.vla_keywords if keyword.lower() in text]
         cv_hits = [keyword for keyword in self.config.sources.cv_keywords if keyword.lower() in text]
+        world_model_hits = [keyword for keyword in self.config.sources.world_model_keywords if keyword.lower() in text]
 
         if vla_hits:
             tags.append("VLA")
             score += min(3.5, 1.5 + len(vla_hits) * 0.7)
+        if world_model_hits:
+            tags.append("World Model")
+            score += min(3.3, 1.4 + len(world_model_hits) * 0.6)
         if cv_hits or "cs.CV" in paper.categories:
             tags.append("CV")
             score += min(2.0, 0.8 + len(cv_hits) * 0.3)
@@ -247,12 +252,15 @@ class NotifierAgent:
 
     def run(self, papers: list[Paper], *, run_date: datetime, report: Path | None = None) -> bool:
         if not self.available():
+            print("Feishu notification skipped: FEISHU_WEBHOOK_URL is not configured.", file=sys.stderr)
             return False
-        return self.client.send_text(self._render_text(papers, run_date, report))
+        self.client.send_text(self._render_text(papers, run_date, report))
+        print("Feishu notification sent.", file=sys.stderr)
+        return True
 
     def _render_text(self, papers: list[Paper], run_date: datetime, report: Path | None) -> str:
         lines = [
-            f"论文日报 | VLA & CV | {run_date.date().isoformat()}",
+            f"论文日报 | VLA / CV / World Model | {run_date.date().isoformat()}",
             f"今日精选 {len(papers)} 篇",
             "",
         ]
