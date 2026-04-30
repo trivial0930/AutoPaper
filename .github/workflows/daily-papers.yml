@@ -27,6 +27,10 @@ on:
           - "false"
           - "true"
 
+concurrency:
+  group: daily-papers-main
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -41,6 +45,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -74,7 +81,14 @@ jobs:
           python -m paper_agents run --config config.json --days "$DAYS" $EXTRA_ARGS --json-out latest_papers.json
 
       - name: Commit report
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: "chore: update daily paper report"
-          file_pattern: "daily_papers/*.md latest_papers.json"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily_papers/*.md latest_papers.json
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update daily paper report"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
