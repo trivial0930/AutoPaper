@@ -143,6 +143,12 @@ python3 -m paper_agents run --config config.json --date 2026-04-29
 python3 -m paper_agents run --config config.json --days 7
 ```
 
+抓从最近一个周日 00:00 到现在的论文，适合临时测试：
+
+```bash
+python3 -m paper_agents run --config config.json --since-last-sunday --timezone Asia/Shanghai
+```
+
 同时导出完整 JSON：
 
 ```bash
@@ -162,7 +168,7 @@ python3 -m paper_agents run --config config.json --json-out papers.json
 自动运行会做这些事：
 
 - 运行测试
-- 抓取最近 `2` 天的 arXiv 论文
+- 默认抓取从最近一个周日 00:00 到当前时间的 arXiv 论文，方便测试；手动触发时可把 `since_last_sunday` 改成 `false`，改用 `days`
 - 可选调用 OpenAI 和 Semantic Scholar
 - 生成 `daily_papers/YYYY-MM-DD.md`
 - 如果配置了飞书 Webhook，把论文一句话总结推送到飞书群

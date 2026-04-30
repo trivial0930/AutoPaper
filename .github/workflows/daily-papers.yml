@@ -10,6 +10,14 @@ on:
         description: "Lookback window in days"
         required: false
         default: "2"
+      since_last_sunday:
+        description: "Collect from the most recent Sunday 00:00 to now"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
       no_llm:
         description: "Disable OpenAI classification and summarization"
         required: false
@@ -74,6 +82,9 @@ jobs:
           fi
           if [ "${{ github.event.inputs.skip_semantic || 'false' }}" = "true" ]; then
             EXTRA_ARGS="$EXTRA_ARGS --skip-semantic"
+          fi
+          if [ "${{ github.event.inputs.since_last_sunday || 'true' }}" = "true" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --since-last-sunday --timezone Asia/Shanghai"
           fi
           if [ -n "$FEISHU_WEBHOOK_URL" ]; then
             EXTRA_ARGS="$EXTRA_ARGS --notify-feishu"

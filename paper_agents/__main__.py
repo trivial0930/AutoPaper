@@ -3,8 +3,9 @@ from __future__ import annotations
 import argparse
 import json
 import shutil
-from datetime import datetime, time, timezone
+from datetime import datetime, time, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from .agents import WorkflowAgent, papers_to_jsonable
 from .config import load_config
@@ -22,6 +23,12 @@ def main() -> None:
     run_parser.add_argument("--config", default="config.json")
     run_parser.add_argument("--date", help="Run date in YYYY-MM-DD. Defaults to today in UTC.")
     run_parser.add_argument("--days", type=int, help="Lookback window in days.")
+    run_parser.add_argument(
+        "--since-last-sunday",
+        action="store_true",
+        help="Collect from the most recent Sunday 00:00 to the run date, using --timezone.",
+    )
+    run_parser.add_argument("--timezone", default="Asia/Shanghai", help="Timezone for --date and --since-last-sunday.")
     run_parser.add_argument("--no-llm", action="store_true", help="Disable OpenAI summarization/classification.")
     run_parser.add_argument("--skip-semantic", action="store_true", help="Skip Semantic Scholar enrichment.")
     run_parser.add_argument("--json-out", help="Optional path for full JSON output.")
@@ -50,9 +57,15 @@ def run(args: argparse.Namespace) -> None:
     if args.skip_semantic:
         config.semantic_scholar.enabled = False
 
-    run_date = _parse_run_date(args.date)
+    run_date = _parse_run_date(args.date, args.timezone)
+    start_date = _last_sunday_start(run_date, args.timezone) if args.since_last_sunday else None
     workflow = WorkflowAgent(config)
-    all_papers, selected, report = workflow.run(run_date=run_date, days=args.days, notify_feishu=args.notify_feishu)
+    all_papers, selected, report = workflow.run(
+        run_date=run_date,
+        days=args.days,
+        start_date=start_date,
+        notify_feishu=args.notify_feishu,
+    )
 
     store = PaperStore(config.database.path)
     try:
@@ -69,11 +82,20 @@ def run(args: argparse.Namespace) -> None:
     print(f"Database: {config.database.path}")
 
 
-def _parse_run_date(value: str | None) -> datetime:
+def _parse_run_date(value: str | None, timezone_name: str) -> datetime:
+    tz = ZoneInfo(timezone_name)
     if value:
         date_value = datetime.strptime(value, "%Y-%m-%d").date()
-        return datetime.combine(date_value, time.max, tzinfo=timezone.utc)
-    return datetime.now(timezone.utc)
+        return datetime.combine(date_value, time.max, tzinfo=tz)
+    return datetime.now(tz)
+
+
+def _last_sunday_start(run_date: datetime, timezone_name: str) -> datetime:
+    tz = ZoneInfo(timezone_name)
+    local_date = run_date.astimezone(tz).date()
+    days_since_sunday = (local_date.weekday() + 1) % 7
+    sunday = local_date - timedelta(days=days_since_sunday)
+    return datetime.combine(sunday, time.min, tzinfo=tz)
 
 
 if __name__ == "__main__":

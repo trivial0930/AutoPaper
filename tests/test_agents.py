@@ -4,6 +4,7 @@ import unittest
 
 from datetime import datetime, timezone
 
+from paper_agents.__main__ import _last_sunday_start
 from paper_agents.agents import ClassifierAgent, CuratorAgent, NotifierAgent
 from paper_agents.config import AppConfig, SourceConfig
 from paper_agents.models import Paper
@@ -61,6 +62,11 @@ class AgentTests(unittest.TestCase):
         text = NotifierAgent(config)._render_text([paper], datetime(2026, 4, 30, tzinfo=timezone.utc), None)
         self.assertIn("论文日报", text)
         self.assertIn("一句话总结：本文提出统一策略模型提升机器人操作泛化。", text)
+
+    def test_last_sunday_start_uses_configured_timezone(self) -> None:
+        run_date = datetime(2026, 4, 30, 15, 0, tzinfo=timezone.utc)
+        start = _last_sunday_start(run_date, "Asia/Shanghai")
+        self.assertEqual(start.isoformat(), "2026-04-26T00:00:00+08:00")
 
 
 if __name__ == "__main__":

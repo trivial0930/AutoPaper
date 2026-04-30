@@ -18,9 +18,10 @@ class CollectorAgent:
         self.config = config
         self.arxiv = arxiv or ArxivClient()
 
-    def run(self, *, run_date: datetime, days: int | None = None) -> list[Paper]:
+    def run(self, *, run_date: datetime, days: int | None = None, start_date: datetime | None = None) -> list[Paper]:
         end = run_date.astimezone(timezone.utc)
-        start = end - timedelta(days=days or self.config.sources.lookback_days)
+        start = start_date.astimezone(timezone.utc) if start_date else end - timedelta(days=days or self.config.sources.lookback_days)
+        print(f"Collecting arXiv papers from {start.isoformat()} to {end.isoformat()}")
         return self.arxiv.search_recent(
             start=start,
             end=end,
@@ -285,8 +286,15 @@ class WorkflowAgent:
         self.publisher = PublisherAgent(config)
         self.notifier = NotifierAgent(config)
 
-    def run(self, *, run_date: datetime, days: int | None = None, notify_feishu: bool = False) -> tuple[list[Paper], list[Paper], Path]:
-        papers = self.collector.run(run_date=run_date, days=days)
+    def run(
+        self,
+        *,
+        run_date: datetime,
+        days: int | None = None,
+        start_date: datetime | None = None,
+        notify_feishu: bool = False,
+    ) -> tuple[list[Paper], list[Paper], Path]:
+        papers = self.collector.run(run_date=run_date, days=days, start_date=start_date)
         papers = self.metadata.run(papers)
         papers = self.classifier.run(papers)
         papers = self.summarizer.run(papers)

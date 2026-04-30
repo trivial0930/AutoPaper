@@ -5,6 +5,7 @@ import hashlib
 import hmac
 import json
 import os
+import sys
 import time
 import urllib.error
 import urllib.parse
@@ -18,6 +19,7 @@ from .models import Paper
 
 USER_AGENT = "vla-cv-paper-agents/0.1 (mailto:your-email@example.com)"
 ATOM_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
+ARXIV_RETRY_DELAYS = [10, 30]
 
 
 def _request_json(url: str, headers: dict[str, str] | None = None, data: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -55,8 +57,10 @@ class ArxivClient:
                 time.sleep(3.1)
             try:
                 category_papers = self._search_category(category, start, end, max_results_per_category)
-            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ET.ParseError):
+            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ET.ParseError) as error:
+                print(f"Warning: arXiv category {category} failed: {error}", file=sys.stderr)
                 category_papers = []
+            print(f"Collected {len(category_papers)} arXiv papers from {category}", file=sys.stderr)
             for paper in category_papers:
                 papers[paper.paper_id] = paper
         return list(papers.values())
@@ -78,10 +82,29 @@ class ArxivClient:
             "sortOrder": "descending",
         }
         url = f"{self.base_url}?{urllib.parse.urlencode(params)}"
-        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(request, timeout=45) as response:
-            root = ET.fromstring(response.read())
+        root = self._fetch_atom(url)
         return [_entry_to_paper(entry) for entry in root.findall("atom:entry", ATOM_NS)]
+
+    def _fetch_atom(self, url: str) -> ET.Element:
+        last_error: Exception | None = None
+        delays = [0, *ARXIV_RETRY_DELAYS]
+        for attempt, delay in enumerate(delays, start=1):
+            if delay:
+                time.sleep(delay)
+            try:
+                request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+                with urllib.request.urlopen(request, timeout=60) as response:
+                    payload = response.read()
+                if payload.strip().lower().startswith(b"rate exceeded"):
+                    raise RuntimeError("arXiv rate limit exceeded")
+                return ET.fromstring(payload)
+            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ET.ParseError, RuntimeError) as error:
+                last_error = error
+                if attempt < len(delays):
+                    print(f"Warning: arXiv request failed on attempt {attempt}: {error}; retrying...", file=sys.stderr)
+        if last_error:
+            raise last_error
+        raise RuntimeError("arXiv request failed")
 
 
 def _arxiv_date(value: datetime) -> str:
