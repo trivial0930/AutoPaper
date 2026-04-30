@@ -99,12 +99,13 @@
     "venue": "",
     "tags": [
       "CV",
-      "Multimodal"
+      "Multimodal",
+      "World Model"
     ],
-    "relevance_score": 1.9000000000000001,
-    "priority": "skim",
+    "relevance_score": 5.0,
+    "priority": "must_read",
     "summary": "本文围绕“World2VLM: Distilling World Model Imagination into VLMs for Dynamic Spatial Reasoning”展开，主要贡献见摘要。",
-    "reason": "规则匹配：CV、Multimodal"
+    "reason": "规则匹配：CV、Multimodal、World Model"
   },
   {
     "paper_id": "2604.26920",
@@ -757,12 +758,13 @@
     "venue": "",
     "tags": [
       "CV",
-      "Robot Learning"
+      "Robot Learning",
+      "World Model"
     ],
-    "relevance_score": 1.8,
-    "priority": "skim",
+    "relevance_score": 4.3999999999999995,
+    "priority": "must_read",
     "summary": "本文围绕“Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising”展开，主要贡献见摘要。",
-    "reason": "规则匹配：CV、Robot Learning"
+    "reason": "规则匹配：CV、Robot Learning、World Model"
   },
   {
     "paper_id": "2604.26678",
@@ -1775,12 +1777,13 @@
     "venue": "",
     "tags": [
       "Robot Learning",
-      "VLA"
+      "VLA",
+      "World Model"
     ],
-    "relevance_score": 3.2,
-    "priority": "read",
+    "relevance_score": 5.0,
+    "priority": "must_read",
     "summary": "本文围绕“Stochastic Entanglement of Deterministic Origami Tentacles For Universal Robotic Gripping”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Robot Learning、VLA"
+    "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
     "paper_id": "2604.26848",
@@ -1810,12 +1813,13 @@
     "venue": "",
     "tags": [
       "Robot Learning",
-      "VLA"
+      "VLA",
+      "World Model"
     ],
-    "relevance_score": 4.5,
+    "relevance_score": 5.0,
     "priority": "must_read",
     "summary": "本文围绕“STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Robot Learning、VLA"
+    "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
     "paper_id": "2604.26839",
@@ -2418,8 +2422,8 @@
     "abs_url": "https://arxiv.org/abs/2604.25887",
     "pdf_url": "https://arxiv.org/pdf/2604.25887v1",
     "primary_category": "cs.CV",
-    "semantic_tldr": "No Pedestrian Left Behind is introduced, a real-time adaptive traffic signal system that monitors VRUs in crosswalks and automatically extends signal timing when needed and integrates YOLOv12 with ByteTrack multi-object tracking and an adaptive controller that extends pedestrian phases when remaining time falls below a critical threshold.",
-    "citation_count": 0,
+    "semantic_tldr": "",
+    "citation_count": null,
     "venue": "",
     "tags": [
       "CV",
@@ -2427,7 +2431,7 @@
     ],
     "relevance_score": 2.4,
     "priority": "skim",
-    "summary": "No Pedestrian Left Behind is introduced, a real-time adaptive traffic signal system that monitors VRUs in crosswalks and automatically extends signal timing when needed and integrates YOLOv12 with ByteTrack multi-object tracking and an adaptive controller that extends pedestrian phases when remaining time falls below a critical threshold.",
+    "summary": "本文围绕“No Pedestrian Left Behind: Real-Time Detection and Tracking of Vulnerable Road Users for Adaptive Traffic Signal Control”展开，主要贡献见摘要。",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -2669,17 +2673,18 @@
     "abs_url": "https://arxiv.org/abs/2604.25691",
     "pdf_url": "https://arxiv.org/pdf/2604.25691v1",
     "primary_category": "cs.RO",
-    "semantic_tldr": "A GRU-based dynamics model featuring bidirectional multi-channel connectivity and residual prediction to effectively suppress compounding errors during long-horizon auto-regressive prediction is developed.",
-    "citation_count": 0,
+    "semantic_tldr": "",
+    "citation_count": null,
     "venue": "",
     "tags": [
       "CV",
-      "Robot Learning"
+      "Robot Learning",
+      "World Model"
     ],
-    "relevance_score": 2.1,
-    "priority": "skim",
-    "summary": "A GRU-based dynamics model featuring bidirectional multi-channel connectivity and residual prediction to effectively suppress compounding errors during long-horizon auto-regressive prediction is developed.",
-    "reason": "规则匹配：CV、Robot Learning"
+    "relevance_score": 4.1,
+    "priority": "must_read",
+    "summary": "本文围绕“Learning-Based Dynamics Modeling and Robust Control for Tendon-Driven Continuum Robots”展开，主要贡献见摘要。",
+    "reason": "规则匹配：CV、Robot Learning、World Model"
   },
   {
     "paper_id": "2604.25670",
@@ -2999,8 +3004,8 @@
     "abs_url": "https://arxiv.org/abs/2604.25405",
     "pdf_url": "https://arxiv.org/pdf/2604.25405v1",
     "primary_category": "cs.CV",
-    "semantic_tldr": "DualViewMapDet is proposed, a camera-only inference framework that retrieves map priors online and leverages them to mitigate the absence of a LiDAR sensor during deployment, and makes the code and pre-trained models available.",
-    "citation_count": 0,
+    "semantic_tldr": "",
+    "citation_count": null,
     "venue": "",
     "tags": [
       "CV",
@@ -3008,7 +3013,7 @@
     ],
     "relevance_score": 2.4,
     "priority": "skim",
-    "summary": "DualViewMapDet is proposed, a camera-only inference framework that retrieves map priors online and leverages them to mitigate the absence of a LiDAR sensor during deployment, and makes the code and pre-trained models available.",
+    "summary": "本文围绕“Leveraging Previous-Traversal Point Cloud Map Priors for Camera-Based 3D Object Detection and Tracking”展开，主要贡献见摘要。",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -3102,7 +3107,7 @@
     "pdf_url": "https://arxiv.org/pdf/2604.25387v1",
     "primary_category": "eess.AS",
     "semantic_tldr": "",
-    "citation_count": null,
+    "citation_count": 0,
     "venue": "",
     "tags": [
       "Robot Learning"
@@ -3139,12 +3144,13 @@
     "citation_count": null,
     "venue": "",
     "tags": [
-      "Robot Learning"
+      "Robot Learning",
+      "World Model"
     ],
-    "relevance_score": 1.0,
-    "priority": "skip",
+    "relevance_score": 3.5999999999999996,
+    "priority": "read",
     "summary": "本文围绕“ProDrive: Proactive Planning for Autonomous Driving via Ego-Environment Co-Evolution”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Robot Learning"
+    "reason": "规则匹配：Robot Learning、World Model"
   },
   {
     "paper_id": "2604.25323",
@@ -3615,12 +3621,13 @@
     "citation_count": null,
     "venue": "",
     "tags": [
-      "Multimodal"
+      "Multimodal",
+      "World Model"
     ],
-    "relevance_score": 0.8,
-    "priority": "skip",
+    "relevance_score": 2.8,
+    "priority": "read",
     "summary": "本文围绕“FutureWorld: A Live Environment for Training Predictive Agents with Real-World Outcome Rewards”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Multimodal"
+    "reason": "规则匹配：Multimodal、World Model"
   },
   {
     "paper_id": "2604.26703",
@@ -4107,12 +4114,13 @@
     "citation_count": null,
     "venue": "",
     "tags": [
-      "Multimodal"
+      "Multimodal",
+      "World Model"
     ],
-    "relevance_score": 0.8,
-    "priority": "skip",
+    "relevance_score": 2.8,
+    "priority": "read",
     "summary": "本文围绕“AGEL-Comp: A Neuro-Symbolic Framework for Compositional Generalization in Interactive Agents”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Multimodal"
+    "reason": "规则匹配：Multimodal、World Model"
   },
   {
     "paper_id": "2604.26516",
@@ -4701,11 +4709,13 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [],
-    "relevance_score": 0.0,
-    "priority": "skip",
+    "tags": [
+      "World Model"
+    ],
+    "relevance_score": 2.0,
+    "priority": "skim",
     "summary": "本文围绕“Uncertainty-Aware Predictive Safety Filters for Probabilistic Neural Network Dynamics”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "reason": "规则匹配：World Model"
   },
   {
     "paper_id": "2604.26834",
