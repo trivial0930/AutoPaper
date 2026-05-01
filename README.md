@@ -43,7 +43,7 @@ python3 -m paper_agents init-config
 
 ```bash
 export DEEPSEEK_API_KEY="你的 API key"
-export DEEPSEEK_MODEL="deepseek-chat"
+export DEEPSEEK_MODEL="deepseek-v4-flash"
 ```
 
 然后运行：
@@ -189,7 +189,13 @@ Settings -> Secrets and variables -> Actions -> New repository secret
 如果想改模型，可以添加 repository variable：
 
 ```text
-DEEPSEEK_MODEL=deepseek-chat
+DEEPSEEK_MODEL=deepseek-v4-flash
+```
+
+如果你想让总结质量更强、能接受更高费用，可以把变量改成：
+
+```text
+DEEPSEEK_MODEL=deepseek-v4-pro
 ```
 
 ### 推送到飞书

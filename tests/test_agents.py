@@ -96,10 +96,15 @@ class AgentTests(unittest.TestCase):
         self.assertIn("latent dynamics model", paper.summary)
         self.assertNotIn("主要贡献见摘要", paper.summary)
 
-    def test_unsupported_deepseek_model_falls_back(self) -> None:
+    def test_deepseek_v4_model_is_supported(self) -> None:
         with patch.dict("os.environ", {"DEEPSEEK_MODEL": "deepseek-v4-flash"}):
             client = OpenAIClient("deepseek-v4-flash", "deepseek")
-        self.assertEqual(client.model, "deepseek-chat")
+        self.assertEqual(client.model, "deepseek-v4-flash")
+
+    def test_unsupported_deepseek_model_falls_back(self) -> None:
+        with patch.dict("os.environ", {"DEEPSEEK_MODEL": "made-up-model"}):
+            client = OpenAIClient("made-up-model", "deepseek")
+        self.assertEqual(client.model, "deepseek-v4-flash")
 
     def test_last_sunday_start_uses_configured_timezone(self) -> None:
         run_date = datetime(2026, 4, 30, 15, 0, tzinfo=timezone.utc)

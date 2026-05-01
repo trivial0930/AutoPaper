@@ -190,7 +190,7 @@ class SemanticScholarClient:
 
 class OpenAIClient:
     base_url = "https://api.openai.com/v1/responses"
-    deepseek_models = {"deepseek-chat", "deepseek-reasoner"}
+    deepseek_models = {"deepseek-v4-flash", "deepseek-v4-pro", "deepseek-chat", "deepseek-reasoner"}
 
     def __init__(self, model: str, provider: str = "openai"):
         self.provider = os.environ.get("LLM_PROVIDER", provider).lower()
@@ -213,10 +213,10 @@ class OpenAIClient:
             model = os.environ.get("DEEPSEEK_MODEL", default)
             if model not in self.deepseek_models:
                 print(
-                    f"Warning: unsupported DeepSeek model '{model}', falling back to deepseek-chat.",
+                    f"Warning: unsupported DeepSeek model '{model}', falling back to deepseek-v4-flash.",
                     file=sys.stderr,
                 )
-                return "deepseek-chat"
+                return "deepseek-v4-flash"
             return model
         return os.environ.get("OPENAI_MODEL", default)
 
