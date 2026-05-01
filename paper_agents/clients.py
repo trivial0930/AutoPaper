@@ -22,6 +22,14 @@ ATOM_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/sch
 ARXIV_RETRY_DELAYS = [10, 30]
 
 
+class HTTPRequestError(RuntimeError):
+    def __init__(self, status_code: int, url: str, body: str):
+        self.status_code = status_code
+        self.url = url
+        self.body = body
+        super().__init__(f"HTTP {status_code} from {url}: {body}")
+
+
 def _request_json(url: str, headers: dict[str, str] | None = None, data: dict[str, Any] | None = None) -> dict[str, Any]:
     body = None
     request_headers = {"User-Agent": USER_AGENT, **(headers or {})}
@@ -35,7 +43,7 @@ def _request_json(url: str, headers: dict[str, str] | None = None, data: dict[st
             return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as error:
         body = error.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"HTTP {error.code} from {url}: {body}") from error
+        raise HTTPRequestError(error.code, url, body) from error
 
 
 def _text(element: ET.Element | None) -> str:
@@ -172,7 +180,14 @@ class SemanticScholarClient:
 
         try:
             data = _request_json(url, headers=headers)
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError):
+        except HTTPRequestError as error:
+            print(
+                f"Warning: Semantic Scholar enrichment skipped for {paper.paper_id}: HTTP {error.status_code}",
+                file=sys.stderr,
+            )
+            return paper
+        except (urllib.error.URLError, TimeoutError, RuntimeError) as error:
+            print(f"Warning: Semantic Scholar enrichment skipped for {paper.paper_id}: {error}", file=sys.stderr)
             return paper
         finally:
             time.sleep(self.sleep_seconds)

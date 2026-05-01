@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 from paper_agents.__main__ import _last_sunday_start
 from paper_agents.agents import ClassifierAgent, CuratorAgent, NotifierAgent, SummarizerAgent
-from paper_agents.clients import OpenAIClient
+from paper_agents.clients import HTTPRequestError, OpenAIClient, SemanticScholarClient
 from paper_agents.config import AppConfig, SourceConfig
 from paper_agents.models import Paper
 
@@ -105,6 +105,21 @@ class AgentTests(unittest.TestCase):
         with patch.dict("os.environ", {"DEEPSEEK_MODEL": "made-up-model"}):
             client = OpenAIClient("made-up-model", "deepseek")
         self.assertEqual(client.model, "deepseek-v4-flash")
+
+    def test_semantic_scholar_404_is_not_fatal(self) -> None:
+        paper = Paper(
+            paper_id="2604.28196",
+            title="Fresh arXiv Paper",
+            authors=[],
+            abstract="",
+            published="",
+            updated="",
+            categories=["cs.CV"],
+        )
+        client = SemanticScholarClient(sleep_seconds=0)
+        with patch("paper_agents.clients._request_json", side_effect=HTTPRequestError(404, "url", "not found")):
+            enriched = client.enrich(paper)
+        self.assertIs(enriched, paper)
 
     def test_last_sunday_start_uses_configured_timezone(self) -> None:
         run_date = datetime(2026, 4, 30, 15, 0, tzinfo=timezone.utc)
