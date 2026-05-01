@@ -31,7 +31,7 @@
     ],
     "relevance_score": 4.199999999999999,
     "priority": "must_read",
-    "summary": "本文围绕“HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Driving world models serve as a pivotal technology for autonomous driving by simulating environmental dynamics. However, existing approaches predominantly focus on future scene...",
     "reason": "规则匹配：CV、Multimodal、World Model"
   },
   {
@@ -67,7 +67,7 @@
     ],
     "relevance_score": 2.1,
     "priority": "skim",
-    "summary": "本文围绕“OmniRobotHome: A Multi-Camera Platform for Real-Time Multiadic Human-Robot Interaction”展开，主要贡献见摘要。",
+    "summary": "OmniRobotHome用48个同步摄像头实现实时3D感知，解决了多人多机器人协作中的遮挡与跟踪难题，提升了人机协作的安全性和效率。",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -98,7 +98,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“Generalizable Sparse-View 3D Reconstruction from Unconstrained Images”展开，主要贡献见摘要。",
+    "summary": "GenWildSplat解决稀疏无",
     "reason": "规则匹配：CV"
   },
   {
@@ -143,7 +143,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models”展开，主要贡献见摘要。",
+    "summary": "LaST-R1用潜在链式推理和联合优化算法解决VLA模型物理推理弱、适应差",
     "reason": "规则匹配：CV、Multimodal、Robot Learning、VLA、World Model"
   },
   {
@@ -174,7 +174,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Representation Fréchet Loss for Visual Generation”展开，主要贡献见摘要。",
+    "summary": "将Fréchet距离作为不可行的训练目标，通过解耦估计与批大小实现视觉生成质量提升和一步生成。",
     "reason": "规则匹配：CV"
   },
   {
@@ -228,7 +228,7 @@
     ],
     "relevance_score": 3.6999999999999997,
     "priority": "read",
-    "summary": "本文围绕“Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Recent visual generation models have made major progress in photorealism, typography, instruction following, and interactive editing, yet they still struggle with spatial reason...",
     "reason": "规则匹配：CV、World Model"
   },
   {
@@ -264,7 +264,7 @@
     ],
     "relevance_score": 4.0,
     "priority": "must_read",
-    "summary": "本文围绕“Stop Holding Your Breath: CT-Informed Gaussian Splatting for Dynamic Bronchoscopy”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Bronchoscopic navigation relies on registering endoscopic video to a preoperative CT scan, but respiratory motion deforms the airway by 5-20 mm, creating CT-to-body divergence t...",
     "reason": "规则匹配：CV、Robot Learning、VLA"
   },
   {
@@ -313,7 +313,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We introduce AEGIS, A holistic benchmark for Evaluating forensic analysis of AI-Generated academic ImageS. Compared to existing benchmarks, AEGIS features three key advances: (1...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -345,7 +345,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Action Motifs: Self-Supervised Hierarchical Representation of Human Body Movements”展开，主要贡献见摘要。",
+    "summary": "提出人体运动分层表示，用A4Mer自监督学习动作",
     "reason": "规则匹配：CV"
   },
   {
@@ -378,7 +378,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“PhyCo: Learning Controllable Physical Priors for Generative Motion”展开，主要贡献见摘要。",
+    "summary": "PhyCo用物理监督微调扩散模型和视觉语言模型奖励优化，解决视频生成物理不一致问题，提升物理真实性与可控性。",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -410,7 +410,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“Continuous-tone Simple Points: An $\\ell_0$-Norm of Cyclic Gradient for Topology-Preserving Data-Driven Image Segmentation”展开，主要贡献见摘要。",
+    "summary": "提出连续值图像上基于循环梯度ℓ0范数的可微简单点检测方法，实现拓扑保持的图像分割，提升结构一致性。",
     "reason": "规则匹配：CV"
   },
   {
@@ -435,10 +435,10 @@
     "tags": [
       "CV"
     ],
-    "relevance_score": 0.8,
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Beyond Pixel Fidelity: Minimizing Perceptual Distortion and Color Bias in Night Photography Rendering”展开，主要贡献见摘要。",
-    "reason": "规则匹配：CV"
+    "summary": "摘要要点：Night Photography Rendering (NPR) poses a significant challenge due to the extreme contrast between dark and illuminated areas in scenes, stemming from concurrent capture of sev...",
+    "reason": "纯图像处理非VLA/机器人/多模态/世界模型"
   },
   {
     "paper_id": "2604.28134",
@@ -469,7 +469,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“3D-ReGen: A Unified 3D Geometry Regeneration Framework”展开，主要贡献见摘要。",
+    "summary": "用VecSet条件机制将初始3D形状与2D图像再生为精细3D物体，实现增强重建编辑，提升可控生成质量。",
     "reason": "规则匹配：CV"
   },
   {
@@ -508,7 +508,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“MoCapAnything V2: End-to-End Motion Capture for Arbitrary Skeletons”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Recent methods for arbitrary-skeleton motion capture from monocular video follow a factorized pipeline, where a Video-to-Pose network predicts joint positions and an analytical...",
     "reason": "规则匹配：CV"
   },
   {
@@ -549,7 +549,7 @@
     ],
     "relevance_score": 2.2,
     "priority": "skim",
-    "summary": "本文围绕“PRISM: Pre-alignment via Black-box On-policy Distillation for Multimodal Reinforcement Learning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：The standard post-training recipe for large multimodal models (LMMs) applies supervised fine-tuning (SFT) on curated demonstrations followed by reinforcement learning with verif...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -581,7 +581,7 @@
     ],
     "relevance_score": 4.0,
     "priority": "must_read",
-    "summary": "本文围绕“Beyond Gaussian Bottlenecks: Topologically Aligned Encoding of Vision-Transformer Feature Spaces”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Modern visual world modeling systems increasingly rely on high-capacity architectures and large-scale data to produce plausible motion, yet they often fail to preserve underlyin...",
     "reason": "规则匹配：CV、World Model"
   },
   {
@@ -614,7 +614,7 @@
     ],
     "relevance_score": 2.9000000000000004,
     "priority": "read",
-    "summary": "本文围绕“FreeOcc: Training-Free Embodied Open-Vocabulary Occupancy Prediction”展开，主要贡献见摘要。",
+    "summary": "FreeOcc",
     "reason": "规则匹配：CV、Multimodal、Robot Learning"
   },
   {
@@ -643,7 +643,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“UHR-Net: An Uncertainty-Aware Hypergraph Refinement Network for Medical Image Segmentation”展开，主要贡献见摘要。",
+    "summary": "针对医学图像中病灶边界模糊和小病灶易被稀释问题，UHR-Net用不确定性引导超图细化网络实现更精准分割。",
     "reason": "规则匹配：CV"
   },
   {
@@ -679,7 +679,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“AesRM: Improving Video Aesthetics with Expert-Level Feedback”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Despite rapid advances in photorealistic video generation, real-world applications such as filmmaking require video aesthetics, e.g., harmonious colors and cinematic lighting, b...",
     "reason": "规则匹配：CV"
   },
   {
@@ -709,7 +709,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“3D Reconstruction Techniques in the Manufacturing Domain: Applications, Research Opportunities and Use Cases”展开，主要贡献见摘要。",
+    "summary": "摘要要点：This comprehensive review examines the evolution and the current state of the art in three-dimensional (3D) reconstruction techniques in manufacturing applications. The analysis...",
     "reason": "规则匹配：CV"
   },
   {
@@ -738,7 +738,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“TAFA-GSGC: Group-wise Scalable Point Cloud Geometry Compression with Progressive Residual Refinement”展开，主要贡献见摘要。",
+    "summary": "针对点云传输带宽自适应问题，TAFA-GSGC用分层残",
     "reason": "规则匹配：CV"
   },
   {
@@ -769,7 +769,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Single-image human mesh recovery provides a compact 3D, person-centric representation that supports analysis, animation, AR and VR, rehabilitation, and human-computer interactio...",
     "reason": "规则匹配：CV"
   },
   {
@@ -802,7 +802,7 @@
     ],
     "relevance_score": 4.0,
     "priority": "must_read",
-    "summary": "本文围绕“Are DeepFakes Realistic Enough? Exploring Semantic Mismatch as a Novel Challenge”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Current DeepFake detection scenarios are mostly binary, yet data manipulation can vary across audio, video, or both, whose variability is not captured in binary settings. Four-c...",
     "reason": "规则匹配：CV、Robot Learning、VLA"
   },
   {
@@ -835,7 +835,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Faster 3D Gaussian Splatting Convergence via Structure-Aware Densification”展开，主要贡献见摘要。",
+    "summary": "摘要要点：3D Gaussian Splatting has emerged as a powerful scene representation for real-time novel-view synthesis. However, its standard adaptive density control relies on screen-space po...",
     "reason": "规则匹配：CV"
   },
   {
@@ -873,7 +873,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“Echo-α: Large Agentic Multimodal Reasoning Model for Ultrasound Interpretation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Ultrasound interpretation requires both precise lesion localization and holistic clinical reasoning, yet existing methods typically excel at only one of these capabilities: spec...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -909,7 +909,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“TransVLM: A Vision-Language Framework and Benchmark for Detecting Any Shot Transitions”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Traditional Shot Boundary Detection (SBD) inherently struggles with complex transitions by formulating the task around isolated cut points, frequently yielding corrupted video s...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -945,7 +945,7 @@
     ],
     "relevance_score": 2.2,
     "priority": "skim",
-    "summary": "本文围绕“FineState-Bench: Benchmarking State-Conditioned Grounding for Fine-grained GUI State Setting”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Despite the rapid progress of large vision-language models (LVLMs), fine-grained, state-conditioned GUI interaction remains challenging. Current evaluations offer limited covera...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -978,7 +978,7 @@
     ],
     "relevance_score": 1.6,
     "priority": "skim",
-    "summary": "本文围绕“ClimateVID -- Social Media Videos Analysis and Challenges Involved”展开，主要贡献见摘要。",
+    "summary": "评估多模态模型和聚类方法在社交媒体视频中检测气候变化主题，发现模型能力有限但聚类能产生有意义视觉框架。",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1016,7 +1016,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“TripVVT: A Large-Scale Triplet Dataset and a Coarse-Mask Baseline for In-the-Wild Video Virtual Try-On”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Due to the scarcity of large-scale in-the-wild triplet data and the improper use of masks, the performance of video virtual try-on models remains limited. In this paper, we firs...",
     "reason": "规则匹配：CV"
   },
   {
@@ -1053,7 +1053,7 @@
     ],
     "relevance_score": 2.8,
     "priority": "read",
-    "summary": "本文围绕“GUI Agents with Reinforcement Learning: Toward Digital Inhabitants”展开，主要贡献见摘要。",
+    "summary": "强化学习解决GUI智能体在长期信用分配与安全探索上的瓶颈，提供离线在线混合框架，推动自动化迈向",
     "reason": "规则匹配：CV、World Model"
   },
   {
@@ -1082,7 +1082,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“The Effects of Visual Priming on Cooperative Behavior in Vision-Language Models”展开，主要贡献见摘要。",
+    "summary": "摘要要点：As Vision-Language Models (VLMs) become increasingly integrated into decision-making systems, it is essential to understand how visual inputs influence their behavior. This pape...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1113,7 +1113,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“Dynamic Cluster Data Sampling for Efficient and Long-Tail-Aware Vision-Language Pre-training”展开，主要贡献见摘要。",
+    "summary": "摘要要点：The computational cost of training a vision-language model (VLM) can be reduced by sampling the training data. Previous work on efficient VLM pre-training has pointed to the imp...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1144,7 +1144,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Training-Free Tunnel Defect Inspection and Engineering Interpretation via Visual Recalibration and Entity Reconstruction”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Tunnel inspection requires outputs that can support defect localization, measurement, severity grading, and engineering documentation. Existing training-free foundation-model pi...",
     "reason": "规则匹配：CV"
   },
   {
@@ -1177,7 +1177,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Generate Your Talking Avatar from Video Reference”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Existing talking avatar methods typically adopt an image-to-video pipeline conditioned on a static reference image within the same scene as the target generation. This restricte...",
     "reason": "规则匹配：CV"
   },
   {
@@ -1209,7 +1209,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“HiMix: Hierarchical Artifact-aware Mixup for Generalized Synthetic Image Detection”展开，主要贡献见摘要。",
+    "summary": "HiMix通过混合增强与层次伪迹感知，解决合成图像检测泛化差问题，在多个基准上取得最优性能。",
     "reason": "规则匹配：CV"
   },
   {
@@ -1238,7 +1238,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“Noise2Map: End-to-End Diffusion Model for Semantic Segmentation and Change Detection”展开，主要贡献见摘要。",
+    "summary": "Noise2Map用端到端扩散模型统一解决遥感语义分割和变化检测，通过任务特定噪声调度直接预测分割图，避免采样代价，平均性能排名第一。",
     "reason": "规则匹配：CV"
   },
   {
@@ -1271,7 +1271,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Frequency-Aware Semantic Fusion with Gated Injection for AI-generated Image Detection”展开，主要贡献见摘要。",
+    "summary": "FGINet通过带掩码频率编码和门控频率注入，解决AI生成图像检测泛化性差问题，实现跨生成模型最佳性能。",
     "reason": "规则匹配：CV"
   },
   {
@@ -1302,7 +1302,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Parameter-Efficient Architectural Modifications for Translation-Invariant CNNs”展开，主要贡献见摘要。",
+    "summary": "通过插入全局平均池化",
     "reason": "规则匹配：CV"
   },
   {
@@ -1338,7 +1338,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Taming Noise-Induced Prototype Degradation for Privacy-Preserving Personalized Federated Fine-Tuning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Prototype-based Personalized Federated Learning (ProtoPFL) enables efficient multi-domain adaptation by communicating compact class prototypes, but directly sharing them poses p...",
     "reason": "规则匹配：CV"
   },
   {
@@ -1373,7 +1373,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“Machine Unlearning for Class Removal through SISA-based Deep Neural Network Architectures”展开，主要贡献见摘要。",
+    "summary": "使用带强化重放和门控网络的",
     "reason": "规则匹配：CV"
   },
   {
@@ -1404,7 +1404,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“GourNet: A CNN-Based Model for Mango Leaf Disease Detection”展开，主要贡献见摘要。",
+    "summary": "用CNN模型GourNet检测芒果叶8类病害，在MBD数据集上达到97%分类准确率。",
     "reason": "规则匹配：CV"
   },
   {
@@ -1434,7 +1434,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Learning to Reason: Targeted Knowledge Discovery and Fuzzy Logic Update for Robust Image Recognition”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Integrating domain knowledge into deep neural networks is a promising way to improve generalization. Existing methods either encode prior knowledge in the loss function or apply...",
     "reason": "规则匹配：CV"
   },
   {
@@ -1460,13 +1460,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "CV"
-    ],
-    "relevance_score": 0.8,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Physically-Informed Fuzzy Clustering of Vertical Sounding Ionograms”展开，主要贡献见摘要。",
-    "reason": "规则匹配：CV"
+    "summary": "摘要要点：This paper presents a physically-informed fuzzy clustering of vertical sounding ionograms for automatically separating the ionogram into tracks suitable for further interpretati...",
+    "reason": "属于空间物理与遥感数据聚类，与机器人、多模态AI及世界模型无关。"
   },
   {
     "paper_id": "2604.27715",
@@ -1496,7 +1494,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Test-time prompt tuning (TPT) has emerged as a promising technique for enhancing the adaptability of vision-language models by optimizing textual prompts using unlabeled test da...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1529,7 +1527,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“Linguistically Informed Multimodal Fusion for Vietnamese Scene-Text Image Captioning: Dataset, Graph Framework, and Phonological Attention”展开，主要贡献见摘要。",
+    "summary": "提出HSTFG和PhonoSTFG图融合框架，解决越南",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1562,7 +1560,7 @@
     ],
     "relevance_score": 1.4,
     "priority": "skim",
-    "summary": "本文围绕“A generalised pre-training strategy for deep learning networks in semantic segmentation of remotely sensed images”展开，主要贡献见摘要。",
+    "summary": "提出通用预训练策略解决遥感分割预训练域差距问题，引导模型避免学习域特定特征，在四个数据集上达最优。",
     "reason": "规则匹配：CV"
   },
   {
@@ -1592,7 +1590,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“RayFormer: Modeling Inter- and Intra-Ray Similarity for NeRF-Based Video Snapshot Compressive Imaging”展开，主要贡献见摘要。",
+    "summary": "针对视频快照压缩成像中",
     "reason": "规则匹配：CV"
   },
   {
@@ -1625,7 +1623,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“Deep Learning-Based Segmentation of Peritoneal Cancer Index Regions from CT Imaging”展开，主要贡献见摘要。",
+    "summary": "用nnU-Net自动分割CT影像中的腹膜癌指数区域，达成非侵入性评估且Dice指标接近专家一致性。",
     "reason": "规则匹配：CV"
   },
   {
@@ -1656,7 +1654,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“EviMem: Evidence-Gap-Driven Iterative Retrieval for Long-Term Conversational Memory”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Long-term conversational memory requires retrieving evidence scattered across multiple sessions, yet single-pass retrieval fails on temporal and multi-hop questions. Existing it...",
     "reason": "规则匹配：CV"
   },
   {
@@ -1694,7 +1692,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“MSR:Hybrid Field Modeling for CT-MRI Rigid-Deformable Registration of the Cervical Spine with an Annotated Dataset”展开，主要贡献见摘要。",
+    "summary": "发布颈椎CT-MRI刚柔配准数据集R-D-Reg，提出MSR框架融合Mamba全局和S",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1728,7 +1726,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“RopeDreamer: A Kinematic Recurrent State Space Model for Dynamics of Flexible Deformable Linear Objects”展开，主要贡献见摘要。",
+    "summary": "摘要要点：The robotic manipulation of Deformable Linear Objects (DLOs) is a fundamental challenge due to the high-dimensional, non-linear dynamics of flexible structures and the complexit...",
     "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
@@ -1758,7 +1756,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“FlexiTac: A Low-Cost, Open-Source, Scalable Tactile Sensing Solution for Robotic Systems”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We present FlexiTac, a low-cost, open-source, and scalable piezoresistive tactile sensing solution designed for robotic end-effectors. FlexiTac is a practical \"plug-in\" module c...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -1789,7 +1787,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Design and Characteristics of a Thin-Film ThermoMesh for the Efficient Embedded Sensing of a Spatio-Temporally Sparse Heat Source”展开，主要贡献见摘要。",
+    "summary": "摘要要点：This work presents ThermoMesh, a passive thin-film thermoelectric mesh sensor designed to detect and characterize spatio-temporally sparse heat sources through conduction-based...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -1821,7 +1819,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“GSDrive: Reinforcing Driving Policies by Multi-mode Trajectory Probing with 3D Gaussian Splatting Environment”展开，主要贡献见摘要。",
+    "summary": "GSDrive用3D高斯溅射模拟器",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -1851,7 +1849,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Framework for Collaborative Operation of Autonomous Delivery Vehicles Within a Marshaling Yard”展开，主要贡献见摘要。",
+    "summary": "摘要要点：As autonomous vehicles slowly deploy into urban roads for limited use cases with significant edge case issues, closed facilities like marshaling yards provide a ripe case for co...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -1881,7 +1879,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“Dreaming Across Towns: Semantic Rollout and Town-Adversarial Regularization for Zero-Shot Held-Out-Town Fixed-Route Driving in CARLA”展开，主要贡献见摘要。",
+    "summary": "用语义展开和城镇对抗正则化改进世界模型，提高CARLA零样本迁移至未见城镇的路线完成",
     "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
@@ -1915,7 +1913,7 @@
     ],
     "relevance_score": 3.5999999999999996,
     "priority": "read",
-    "summary": "本文围绕“Flying by Inference: Active Inference World Models for Adaptive UAV Swarms”展开，主要贡献见摘要。",
+    "summary": "摘要要点：This paper presents an expert-guided active-inference-inspired framework for adaptive UAV swarm trajectory planning. The proposed method converts multi-UAV trajectory design fro...",
     "reason": "规则匹配：Robot Learning、World Model"
   },
   {
@@ -1946,7 +1944,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Learning-Based Hierarchical Scene Graph Matching for Robot Localization Leveraging Prior Maps”展开，主要贡献见摘要。",
+    "summary": "学习型层次化场景图匹配解决机器人定位中节点对应困难，",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -1996,7 +1994,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“MotuBrain: An Advanced World Action Model for Robot Control”展开，主要贡献见摘要。",
+    "summary": "MotuBrain用统一多模态生成模型联合建模视频与动作，解决VLA缺乏细粒度动态建模问题，实现50倍实时加速。",
     "reason": "规则匹配：CV、Multimodal、Robot Learning、VLA、World Model"
   },
   {
@@ -2029,7 +2027,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Connected Dependability Cage: Run-Time Function and Anomaly Monitoring for the Development and Operation of Safe Automated Vehicles”展开，主要贡献见摘要。",
+    "summary": "利用互联可靠性笼架构中的功能监控与异常监控，保障自动驾驶感知系统在动态场景下实现安全降级与持续开发。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2061,7 +2059,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“ExoActor: Exocentric Video Generation as Generalizable Interactive Humanoid Control”展开，主要贡献见摘要。",
+    "summary": "利用视频生成模型合成第三人称交互视频，转化为可执行行为，实现人形机器人在新场景的交互控制。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2090,7 +2088,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Can Tabular Foundation Models Guide Exploration in Robot Policy Learning?”展开，主要贡献见摘要。",
+    "summary": "提出机器人策略学习全局探索难题，用TFM-S3混合局部-全局搜索与表格基础模型预测，在有限预算下加速收敛并提升最终性能。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2126,7 +2124,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“Robot Learning from Human Videos: A Survey”展开，主要贡献见摘要。",
+    "summary": "综述利用人类视频学习机器人技能的方法，突破数据扩展瓶颈，推动通用机器人",
     "reason": "规则匹配：CV、Robot Learning、VLA"
   },
   {
@@ -2166,7 +2164,7 @@
     ],
     "relevance_score": 2.9000000000000004,
     "priority": "read",
-    "summary": "本文围绕“Simulating Infant First-Person Sensorimotor Experience via Motion Retargeting from Babies to Humanoids”展开，主要贡献见摘要。",
+    "summary": "从婴儿视频进行运动重定位到人形机器人，模拟多",
     "reason": "规则匹配：CV、Multimodal、Robot Learning"
   },
   {
@@ -2190,14 +2188,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Robot Learning",
-      "VLA"
-    ],
-    "relevance_score": 3.2,
-    "priority": "read",
-    "summary": "本文围绕“Function-based Parametric Co-Design Optimization of Dexterous Hands”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Robot Learning、VLA"
+    "tags": [],
+    "relevance_score": 1.0,
+    "priority": "skip",
+    "summary": "摘要要点：Despite advances in dexterous hand manipulation, robotic hand design is still largely decoupled from task-driven evaluation and control, limiting systematic optimization. Existi...",
+    "reason": "论文聚焦机器人手部设计优化，不涉及VLA/CV等主题"
   },
   {
     "paper_id": "2604.27508",
@@ -2227,7 +2222,7 @@
     ],
     "relevance_score": 2.1,
     "priority": "skim",
-    "summary": "本文围绕“SASI: Leveraging Sub-Action Semantics for Robust Early Action Recognition in Human-Robot Interaction”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Understanding human actions is critical for advancing behavior analysis in human-robot interaction. Particularly in tasks that demand quick and proactive feedback, robots must r...",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -2272,7 +2267,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“PRTS: A Primitive Reasoning and Tasking System via Contrastive Representations”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Vision-Language-Action (VLA) models advance robotic control via strong visual-linguistic priors. However, existing VLAs predominantly frame pretraining as supervised behavior cl...",
     "reason": "规则匹配：CV、Multimodal、Robot Learning、VLA"
   },
   {
@@ -2304,7 +2299,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“RAY-TOLD: Ray-Based Latent Dynamics for Dense Dynamic Obstacle Avoidance with TDMPC”展开，主要贡献见摘要。",
+    "summary": "针对密集动态障碍物避障问题，提出RAY-TOLD混合架构结合激光雷达潜在动力学与策略混合采样，显著降低碰撞率并提升导航可靠性。",
     "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
@@ -2334,7 +2329,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“An Experimental Modular Instrument With a Haptic Feedback Framework for Robotic Surgery Training”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Robotic-assisted surgery offers significant clinical advantages but largely eliminates direct haptic feedback, increasing the risk of excessive tool-tissue interaction forces. A...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2369,7 +2364,7 @@
     ],
     "relevance_score": 1.8,
     "priority": "skim",
-    "summary": "本文围绕“DOT-Sim: Differentiable Optical Tactile Simulation with Precise Real-to-Sim Physical Calibration”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Simulating optical tactile sensors presents significant challenges due to their high deformability and intricate optical properties. To address these issues and enable a physica...",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -2395,14 +2390,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Multimodal",
-      "Robot Learning"
-    ],
-    "relevance_score": 1.8,
-    "priority": "skim",
-    "summary": "本文围绕“From Prompt to Physical Actuation: Holistic Threat Modeling of LLM-Enabled Robotic Systems”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Multimodal、Robot Learning"
+    "tags": [],
+    "relevance_score": 0.0,
+    "priority": "skip",
+    "summary": "用分层数据流图和STRIDE分析LLM机器人系统的三类威胁，揭示攻击跨边界传播至物理执行的安全漏洞。",
+    "reason": "论文关注机器人系统安全威胁建模，非VLA等核心领域"
   },
   {
     "paper_id": "2604.27224",
@@ -2438,7 +2430,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "本文围绕“Learning Tactile-Aware Quadrupedal Loco-Manipulation Policies”展开，主要贡献见摘要。",
+    "summary": "提出触觉感知分层策略，结合人类演示与强化学习，使四足机器人在接触丰富操作任务中平均性能提升28.54%。",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -2469,7 +2461,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Real-Time GPU-Accelerated Monte Carlo Evaluation of Safety-Critical AEB Systems Under Uncertainty”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Automatic Emergency Braking (AEB) systems represent a safety-critical national interest, with the National Highway Traffic Safety Administration (NHTSA) Federal Motor Vehicle Sa...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2498,7 +2490,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "本文围绕“Global Sampling-Based Trajectory Optimization for Contact-Rich Manipulation via KernelSOS”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Contact-rich manipulation is challenging due to its high dimensionality, the requirement for long time horizons, and the presence of hybrid contact dynamics. Sampling-based meth...",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -2528,7 +2520,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“The Field of Safe Motion: Operationalizing Affordances in the Field of Safe Travel Using Reachability Analysis”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We present the Field of Safe Motion (FSM), a quantitative safety model for determining whether a driver maintains a collision-free escape route, or \"out,\" at any given moment by...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2559,7 +2551,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“PALCAS: A Priority-Aware Intelligent Lane Change Advisory System for Autonomous Vehicles using Federated Reinforcement Learning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We present a priority-aware intelligent lane change advisory system based on multi-agent federated reinforcement learning, namely PALCAS, for autonomous vehicles (AVs). While ex...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2599,7 +2591,7 @@
     ],
     "relevance_score": 2.1,
     "priority": "skim",
-    "summary": "本文围绕“Reconstruction by Generation: 3D Multi-Object Scene Reconstruction from Sparse Observations”展开，主要贡献见摘要。",
+    "summary": "从稀疏观测重建",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -2627,7 +2619,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Interaction Forces and Internal Loads in Parallel Manipulators with Actuation Redundancy”展开，主要贡献见摘要。",
+    "summary": "摘要要点：This paper discusses null-space wrench components in parallel manipulators. We examine the adaptation of the two most common characterizations of these components in grasp-like...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2660,7 +2652,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“Three-Step Nav: A Hierarchical Global-Local Planner for Zero-Shot Vision-and-Language Navigation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Breakthrough progress in vision-based navigation through unknown environments has been achieved by using multimodal large language models (MLLMs). These models can plan a sequen...",
     "reason": "规则匹配：CV、Multimodal、Robot Learning、VLA"
   },
   {
@@ -2690,7 +2682,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Bi-Level Optimization for Contact and Motion Planning in Rope-Assisted Legged Robots”展开，主要贡献见摘要。",
+    "summary": "摘要要点：This paper presents a planning pipeline framework for locomotion in rope-assisted robots climbing vertical surfaces. The proposed framework is formulated as a bi-level optimizat...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2721,7 +2713,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "本文围绕“Safe Navigation using Neural Radiance Fields via Reachable Sets”展开，主要贡献见摘要。",
+    "summary": "用NeRF和可达集建模障碍物与机器人能力，通过约束",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -2746,7 +2738,7 @@
     "pdf_url": "https://arxiv.org/pdf/2604.26897v1",
     "primary_category": "cs.RO",
     "semantic_tldr": "",
-    "citation_count": null,
+    "citation_count": 0,
     "venue": "",
     "tags": [
       "Robot Learning",
@@ -2755,7 +2747,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“Stochastic Entanglement of Deterministic Origami Tentacles For Universal Robotic Gripping”展开，主要贡献见摘要。",
+    "summary": "提出折纸触手抓取方法，",
     "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
@@ -2787,7 +2779,7 @@
     ],
     "relevance_score": 2.1,
     "priority": "skim",
-    "summary": "本文围绕“Edge AI for Automotive Vulnerable Road User Safety: Deployable Detection via Knowledge Distillation”展开，主要贡献见摘要。",
+    "summary": "使用知识蒸馏训练紧凑YOLOv8-S模型，解决边缘设备INT8量化下大模型精度崩溃问题，实现3.9倍压缩且降低44%误报率。",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -2823,7 +2815,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Robotic manipulation critically requires reasoning about future spatial-temporal interactions, yet existing VLA policies and world-model-enhanced policies do not fully model act...",
     "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
@@ -2866,7 +2858,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "本文围绕“Walk With Me: Long-Horizon Social Navigation for Human-Centric Outdoor Assistance”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Assisting humans in open-world outdoor environments requires robots to translate high-level natural-language intentions into safe, long-horizon, and socially compliant navigatio...",
     "reason": "规则匹配：CV、Multimodal、Robot Learning、VLA"
   },
   {
@@ -2896,7 +2888,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Rule-based High-Level Coaching for Goal-Conditioned Reinforcement Learning in Search-and-Rescue UAV Missions Under Limited-Simulation Training”展开，主要贡献见摘要。",
+    "summary": "在有限仿真训练的无人机",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2936,7 +2928,7 @@
     ],
     "relevance_score": 4.3999999999999995,
     "priority": "must_read",
-    "summary": "本文围绕“Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising”展开，主要贡献见摘要。",
+    "summary": "X-WAM用异步去噪统一实时动作执行与4D世界建模，在机器人任务中实现近91%成功率并生成高保真4D重建。",
     "reason": "规则匹配：CV、Robot Learning、World Model"
   },
   {
@@ -2969,7 +2961,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "本文围绕“Atomic-Probe Governance for Skill Updates in Compositional Robot Policies”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Skill libraries in deployed robotic systems are continually updated through fine-tuning, fresh demonstrations, or domain adaptation, yet existing typed-composition methods (BLAD...",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -2991,8 +2983,8 @@
     "abs_url": "https://arxiv.org/abs/2604.26637",
     "pdf_url": "https://arxiv.org/pdf/2604.26637v1",
     "primary_category": "cs.RO",
-    "semantic_tldr": "",
-    "citation_count": null,
+    "semantic_tldr": "ATLAS provides time-synchronized visualization of multi-modal robotic data, including multi-view video and proprioceptive signals, and supports annotation of action boundaries, action labels, and task outcomes, and natively handles widely used robotics dataset formats such as ROS bags and theRLDS format.",
+    "citation_count": 0,
     "venue": "",
     "tags": [
       "CV",
@@ -3001,7 +2993,7 @@
     ],
     "relevance_score": 4.300000000000001,
     "priority": "must_read",
-    "summary": "本文围绕“ATLAS: An Annotation Tool for Long-horizon Robotic Action Segmentation”展开，主要贡献见摘要。",
+    "summary": "ATLAS provides time-synchronized visualization of multi-modal robotic data, including mult",
     "reason": "规则匹配：CV、Robot Learning、VLA"
   },
   {
@@ -3031,7 +3023,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“STAR-Filter: Efficient Convex Free-Space Approximation via Starshaped Set Filtering in Noisy Environments”展开，主要贡献见摘要。",
+    "summary": "STAR-Filter用星形集过滤加速噪声环境中凸自由空间近似，显著降低计算时间且保持鲁棒性。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -3063,7 +3055,7 @@
     ],
     "relevance_score": 4.0,
     "priority": "must_read",
-    "summary": "本文围绕“Benchmarking the Safety of Large Language Models for Robotic Health Attendant Control”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Large language models (LLMs) are increasingly considered for deployment as the control component of robotic health attendants, yet their safety in this context remains poorly ch...",
     "reason": "规则匹配：Multimodal、Robot Learning、VLA"
   },
   {
@@ -3092,7 +3084,7 @@
     ],
     "relevance_score": 1.8,
     "priority": "skim",
-    "summary": "本文围绕“LLM-Flax : Generalizable Robotic Task Planning via Neuro-Symbolic Approaches with Large Language Models”展开，主要贡献见摘要。",
+    "summary": "LLM-Flax用大语言模型驱动的神经符号框架消除人工规则和训练数据，在机器人任务规划中平均成功率提升0.117。",
     "reason": "规则匹配：Multimodal、Robot Learning"
   },
   {
@@ -3123,7 +3115,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Persona-Based Process Design for Assistive Human-Robot Workplaces for Persons with Disabilities”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Human-robot interaction is emerging as an important paradigm for integrating persons with disabilities into the workplace. While these systems can enable individuals to work, th...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -3161,7 +3153,7 @@
     ],
     "relevance_score": 4.7,
     "priority": "must_read",
-    "summary": "本文围绕“3D Generation for Embodied AI and Robotic Simulation: A Survey”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Embodied AI and robotic systems increasingly depend on scalable, diverse, and physically grounded 3D content for simulation-based training and real-world deployment. While 3D ge...",
     "reason": "规则匹配：CV、Robot Learning、VLA"
   },
   {
@@ -3194,7 +3186,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "本文围绕“HiPAN: Hierarchical Posture-Adaptive Navigation for Quadruped Robots in Unstructured 3D Environments”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Navigating quadruped robots in unstructured 3D environments poses significant challenges, requiring goal-directed motion, effective exploration to escape from local minima, and...",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -3225,7 +3217,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "本文围绕“Alter-Art: Exploring Embodied Artistic Creation through a Robot Avatar”展开，主要贡献见摘要。",
+    "summary": "摘要要点：As with every emerging technology, new tools in the hands of artists reshape the nature of artwork creation. Current frameworks for robotics in arts deploy the robot as an auton...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -3256,7 +3248,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "本文围绕“Reactive Motion Generation via Phase-varying Neural Potential Functions”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Dynamical systems (DS) methods for Learning-from-Demonstration (LfD) provide stable, continuous policies from few demonstrations. First-order dynamical systems (DS) are effectiv...",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -3287,7 +3279,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Computing Equilibrium beyond Unilateral Deviation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Most familiar equilibrium concepts, such as Nash and correlated equilibrium, guarantee only that no single player can improve their utility by deviating unilaterally. They offer...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3317,7 +3309,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Synthetic Computers at Scale for Long-Horizon Productivity Simulation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Realistic long-horizon productivity work is strongly conditioned on user-specific computer environments, where much of the work context is stored and organized through directory...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3346,7 +3338,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“LLM as Clinical Graph Structure Refiner: Enhancing Representation Learning in EEG Seizure Diagnosis”展开，主要贡献见摘要。",
+    "summary": "用LLM精炼Transformer构建的EEG图边集，消除冗余边，提升癫痫检测准确率并",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -3383,7 +3375,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Intern-Atlas: A Methodological Evolution Graph as Research Infrastructure for AI Scientists”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Existing research infrastructure is fundamentally document-centric, providing citation links between papers but lacking explicit representations of methodological evolution. In...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3419,7 +3411,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows”展开，主要贡献见摘要。",
+    "summary": "摘要要点：LLM agents are expected to complete end-to-end units of work across software tools, business services, and local workspaces. Yet many agent benchmarks freeze a curated task set...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3449,7 +3441,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Crab: A Semantics-Aware Checkpoint/Restore Runtime for Agent Sandboxes”展开，主要贡献见摘要。",
+    "summary": "Crab通过e",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3475,7 +3467,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Latent Adversarial Detection: Adaptive Probing of LLM Activations for Multi-Turn Attack Detection”展开，主要贡献见摘要。",
+    "summary": "针对多轮提示注入攻击检测，通过提取语言模型残差流中的“对抗躁动”轨迹特征，将检测率从76.2%提升至93.8%。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3503,7 +3495,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Normativity and Productivism: Ableist Intelligence? A Degrowth Analysis of AI Sign Language Translation Tools for Deaf People”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Sign languages, of any geographical or accentual variation, understandably face continuous scrutiny under the ever present popularity of verbal dictation and audism. Through thi...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3540,7 +3532,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Do Sparse Autoencoders Capture Concept Manifolds?”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Sparse autoencoders (SAEs) are widely used to extract interpretable features from neural network representations, often under the implicit assumption that concepts correspond to...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3570,7 +3562,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“DEFault++: Automated Fault Detection, Categorization, and Diagnosis for Transformer Architectures”展开，主要贡献见摘要。",
+    "summary": "针对Transformer模型故障难以诊断的问题，提出DEFault++层次学习诊断方法，实现超过0.96的AUROC并提升修复准确率。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3599,8 +3591,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Splitting Argumentation Frameworks with Collective Attacks and Supports”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：This work proposes novel splitting techniques for argumentation formalisms that incorporate supports between defeasible elements. We base our studies on bipolar set-based argume...",
+    "reason": "该论文涉及论证框架拆分，与相关领域无关"
   },
   {
     "paper_id": "2604.28098",
@@ -3630,7 +3622,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Mapping the Methodological Space of Classroom Interaction Research: Scale, Duration, and Modality in an Age of AI”展开，主要贡献见摘要。",
+    "summary": "用规模、时长、模态三维框架系统化课堂",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3657,7 +3649,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“What Makes a Good Terminal-Agent Benchmark Task: A Guideline for Adversarial, Difficult, and Legible Evaluation Design”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Terminal-agent benchmarks have become a primary signal for measuring the coding and system-administration capabilities of large language models. As the market for evaluation env...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -3688,7 +3680,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Towards Neuro-symbolic Causal Rule Synthesis, Verification, and Evaluation Grounded in Legal and Safety Principles”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Rule-based systems remain central in safety-critical domains but often struggle with scalability, brittleness, and goal misspecification. These limitations can lead to reward ha...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -3717,7 +3709,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Characterizing the Consistency of the Emergent Misalignment Persona”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Fine-tuning large language models (LLMs) on narrowly misaligned data generalizes to broadly misaligned behavior, a phenomenon termed emergent misalignment (EM). While prior work...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -3744,13 +3736,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Multimodal"
-    ],
-    "relevance_score": 0.8,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“TopBench: A Benchmark for Implicit Prediction and Reasoning over Tabular Question Answering”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Multimodal"
+    "summary": "摘要要点：Large Language Models (LLMs) have advanced Table Question Answering, where most queries can be answered by extracting information or simple aggregation. However, a common class...",
+    "reason": "领域为表格问答，非VLA/CV/机器人等目标方向"
   },
   {
     "paper_id": "2604.28075",
@@ -3777,8 +3767,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Repetition over Diversity: High-Signal Data Filtering for Sample-Efficient German Language Modeling”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：Recent research has shown that filtering massive English web corpora into high-quality subsets significantly improves training efficiency. However, for high-resource non-English...",
+    "reason": "论文主题为德语语言模型数据过滤，与指定领域无关。"
   },
   {
     "paper_id": "2604.28056",
@@ -3810,7 +3800,7 @@
     ],
     "relevance_score": 4.0,
     "priority": "must_read",
-    "summary": "本文围绕“RHyVE: Competence-Aware Verification and Phase-Aware Deployment for LLM-Generated Reward Hypotheses”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Large language models (LLMs) make reward design in reinforcement learning substantially more scalable, but generated rewards are not automatically reliable training objectives....",
     "reason": "规则匹配：Multimodal、Robot Learning、VLA"
   },
   {
@@ -3844,7 +3834,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“PROMISE-AD: Progression-aware Multi-horizon Survival Estimation for Alzheimer's Disease Progression and Dynamic Tracking”展开，主要贡献见摘要。",
+    "summary": "PROMISE-AD用token化时序Transformer建模不规则就诊与删失数据，实现",
     "reason": "规则匹配：CV"
   },
   {
@@ -3871,7 +3861,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“To Build or Not to Build? Factors that Lead to Non-Development or Abandonment of AI Systems”展开，主要贡献见摘要。",
+    "summary": "通过文献综述与案例数据分析，揭示AI系统未开发或放弃的六类影响因素，以填补预决策阶段研究空白。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3897,7 +3887,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Agent-Agnostic Evaluation of SQL Accuracy in Production Text-to-SQL Systems”展开，主要贡献见摘要。",
+    "summary": "生产T2SQL缺乏评估框架，STEF无需schema从自然语言和SQL对齐特征生成0-100准确度分数，实现持续监控优化。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3926,7 +3916,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Collaborative Agent Reasoning Engineering (CARE): A Three-Party Design Methodology for Systematically Engineering AI Agents with Subject Matter Experts, Developers, and Helper Agents”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We present Collaborative Agent Reasoning Engineering (CARE), a disciplined methodology for engineering Large Language Model (LLM) agents in scientific domains. Unlike ad-hoc tri...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -3961,7 +3951,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“SpecVQA: A Benchmark for Spectral Understanding and Visual Question Answering in Scientific Images”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Spectra are a prevalent yet highly information-dense form of scientific imagery, presenting substantial challenges to multimodal large language models (MLLMs) due to their unstr...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -3993,8 +3983,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“MIFair: A Mutual-Information Framework for Intersectionality and Multiclass Fairness”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：Fairness in machine learning remains challenging due to its ethical complexity, the absence of a universal definition, and the need for context-specific bias metrics. Existing m...",
+    "reason": "论文关于机器学习公平性，与VLA等无关。"
   },
   {
     "paper_id": "2604.28028",
@@ -4025,7 +4015,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Reliable Answers for Recurring Questions: Boosting Text-to-SQL Accuracy with Template Constrained Decoding”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Large language models (LLMs) have revolutionized Text-to-SQL generation, allowing users to query structured data using natural language with growing ease. Yet, real-world deploy...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -4054,7 +4044,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Design Structure Matrix Modularization with Large Language Models”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Design Structure Matrix (DSM) modularization, the task of partitioning system elements into cohesive modules, is a fundamental combinatorial challenge in engineering design. Tra...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -4086,7 +4076,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Learning from Disagreement: Clinician Overrides as Implicit Preference Signals for Clinical AI in Value-Based Care”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We reframe clinician overrides of clinical AI recommendations as implicit preference data - the same signal structure exploited by reinforcement learning from human feedback (RL...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4118,7 +4108,7 @@
     ],
     "relevance_score": 4.8,
     "priority": "must_read",
-    "summary": "本文围绕“A Pattern Language for Resilient Visual Agents”展开，主要贡献见摘要。",
+    "summary": "为平衡VLA模型高延迟非确定性与企业控制回路实时性，提出分离反射与监督的架构",
     "reason": "规则匹配：CV、Multimodal、VLA"
   },
   {
@@ -4151,7 +4141,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Exploring Interaction Paradigms for LLM Agents in Scientific Visualization”展开，主要贡献见摘要。",
+    "summary": "摘要要点：This paper examines how different types of large language model (LLM) agents perform on scientific visualization (SciVis) tasks, where users generate visualization workflows fro...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -4180,7 +4170,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“ITS-Mina: A Harris Hawks Optimization-Based All-MLP Framework with Iterative Refinement and External Attention for Multivariate Time Series Forecasting”展开，主要贡献见摘要。",
+    "summary": "ITS-Mina用HHO优化全MLP框架，通过迭代精炼与外部注意力，低成本",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4215,7 +4205,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“D3-Gym: Constructing Real-World Verifiable Environments for Data-Driven Discovery”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Despite recent progress in language models and agents for scientific data-driven discovery, further advancing their capabilities is held back by the absence of verifiable enviro...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4239,13 +4229,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Multimodal"
-    ],
-    "relevance_score": 0.8,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“From LLM-Driven Trading Card Generation to Procedural Relatedness: A Pokémon Case Study”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Multimodal"
+    "summary": "使用LLM与扩散模型生成个性化宝可梦卡牌，解决元游戏重复性问题，提升玩家参与满意度",
+    "reason": "与目标领域无关"
   },
   {
     "paper_id": "2604.27969",
@@ -4276,7 +4264,7 @@
     ],
     "relevance_score": 2.2,
     "priority": "skim",
-    "summary": "本文围绕“From Mirage to Grounding: Towards Reliable Multimodal Circuit-to-Verilog Code Generation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Multimodal large language models (MLLMs) are increasingly used to translate visual artifacts into code, from UI mockups into HTML to scientific plots into Python scripts. A circ...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -4303,7 +4291,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Splitting Assumption-Based Argumentation Frameworks”展开，主要贡献见摘要。",
+    "summary": "在ABA框架",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4333,7 +4321,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Language Models Refine Mechanical Linkage Designs Through Symbolic Reflection and Modular Optimisation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Designing mechanical linkages involves combinatorial topology selection and continuous parameter fitting. We show that language models can systematically improve linkage designs...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4361,7 +4349,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“LLMs as ASP Programmers: Self-Correction Enables Task-Agnostic Nonmonotonic Reasoning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Recent large language models (LLMs) have achieved impressive reasoning milestones but continue to struggle with high computational costs, logical inconsistencies, and sharp perf...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -4389,7 +4377,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Attractor FCM”展开，主要贡献见摘要。",
+    "summary": "摘要要点：In this paper an attractor FCM is created, tested, and analyzed. This FCM is neither a hebbian based nor agentic, nor a hybrid; it rather is a gradient descent based, physics co...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4417,7 +4405,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“A Collective Variational Principle Unifying Bayesian Inference, Game Theory, and Thermodynamics”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Collective intelligence emerges across biological, physical, and artificial systems without central coordination, yet a unifying principle governing such behaviour remains elusi...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4449,7 +4437,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "本文围绕“MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection”展开，主要贡献见摘要。",
+    "summary": "检索增强的多智能体框架MM-StanceDet通过辩论与自反思解决多模态立场检测中融合困难问题，显著超越现有方法。",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -4478,7 +4466,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Taming the Centaur(s) with LAPITHS: a framework for a theoretically grounded interpretation of AI performances”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We introduce a framework called LAPITHS (Language model Analysis through Paradigm grounded Interpretations of Theses about Human likenesS) and use it to show that several major...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4508,13 +4496,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Multimodal"
-    ],
-    "relevance_score": 0.8,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future”展开，主要贡献见摘要。",
-    "reason": "规则匹配：Multimodal"
+    "summary": "摘要要点：Peer review is a multi-stage process involving reviews, rebuttals, meta-reviews, final decisions, and subsequent manuscript revisions. Recent advances in large language models (...",
+    "reason": "与VLA、CV、机器人学习等无关"
   },
   {
     "paper_id": "2604.27920",
@@ -4540,7 +4526,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Beyond Semantics: Measuring Fine-Grained Emotion Preservation in Small Language Model-Based Machine Translation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Preserving affective nuance remains a challenge in Machine Translation (MT), where semantic equivalence often takes precedence over emotional fidelity. This paper evaluates the...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4571,7 +4557,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“From Unstructured Recall to Schema-Grounded Memory: Reliable AI Memory via Iterative, Schema-Aware Extraction”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Persistent AI memory is often reduced to a retrieval problem: store prior interactions as text, embed them, and ask the model to recover relevant context later. This design is u...",
     "reason": "规则匹配：CV"
   },
   {
@@ -4607,7 +4593,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Exploration Hacking: Can LLMs Learn to Resist RL Training?”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Reinforcement learning (RL) has become essential to the post-training of large language models (LLMs) for reasoning, agentic capabilities and alignment. Successful RL relies on...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -4633,7 +4619,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“An adaptive wavelet-based PINN for problems with localized high-magnitude source”展开，主要贡献见摘要。",
+    "summary": "摘要要点：In recent years, physics-informed neural networks (PINNs) have gained significant attention for solving differential equations, although they suffer from two fundamental limitat...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4661,7 +4647,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Defending Quantum Classifiers against Adversarial Perturbations through Quantum Autoencoders”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Machine learning models can learn from data samples to carry out various tasks efficiently. When data samples are adversarially manipulated, such as by insertion of carefully cr...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4687,7 +4673,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Strait: Perceiving Priority and Interference in ML Inference Serving”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Machine learning (ML) inference serving systems host deep neural network (DNN) models and schedule incoming inference requests across deployed GPUs. However, limited support for...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4714,7 +4700,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Mapping the Phase Diagram of the Vicsek Model with Machine Learning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：In this study, we use machine learning to classify and interpolate the phase structure of the Vicsek flocking model across the three-dimensional parameter space $(η,ρ,v_0)$. We...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4744,8 +4730,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Sequential Inference for Gaussian Processes: A Signal Processing Perspective”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：The proliferation of capable and efficient machine learning (ML) models marks one of the strongest methodological shifts in signal processing (SP) in its nearly 100-year history...",
+    "reason": "与VLA、CV、Robot Learning等主题无关"
   },
   {
     "paper_id": "2604.28149",
@@ -4774,7 +4760,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Explainable Load Forecasting with Covariate-Informed Time Series Foundation Models”展开，主要贡献见摘要。",
+    "summary": "针对时间序列基础模型在电网负荷预测中的黑箱问题，提出协变量掩码高效SHAP方法，让",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4802,7 +4788,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Global Optimality for Constrained Exploration via Penalty Regularization”展开，主要贡献见摘要。",
+    "summary": "提出PGP方法通过二次惩罚正则化解决约束探索的全局收敛问题，首次实现策略梯度法在非凸约束下的最后迭代最优性保证。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4831,7 +4817,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Efficient Multivector Retrieval with Token-Aware Clustering and Hierarchical Indexing”展开，主要贡献见摘要。",
+    "summary": "TACHIOM通过token感知聚类和分层索引，解决多向量检索的高计算",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4861,7 +4847,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Auto-FlexSwitch: Efficient Dynamic Model Merging via Learnable Task Vector Compression”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Model merging has attracted attention as an effective path toward multi-task adaptation by integrating knowledge from multiple task-specific models. Among existing approaches, d...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4884,13 +4870,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "CV"
-    ],
-    "relevance_score": 1.1,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Neural Aided Kalman Filtering for UAV State Estimation in Degraded Sensing Environments”展开，主要贡献见摘要。",
-    "reason": "规则匹配：CV"
+    "summary": "摘要要点：Accurate state estimation of nonlinear dynamical systems is fundamental to modern aerospace operations across air, sea, and space domains. Online tracking of adversarial unmanne...",
+    "reason": "不相关领域，属于控制与估计"
   },
   {
     "paper_id": "2604.28102",
@@ -4916,8 +4900,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“FiLMMeD: Feature-wise Linear Modulation for Cross-Problem Multi-Depot Vehicle Routing”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：Solving practical multi-depot vehicle routing problems (MDVRP) is a challenging optimization task central to modern logistics, increasingly driven by e-commerce. To address the...",
+    "reason": "论文解决的是物流路径优化问题，与VLA、CV、机器人学习等无关。"
   },
   {
     "paper_id": "2604.28070",
@@ -4944,8 +4928,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“A Unified Framework of Hyperbolic Graph Representation Learning Methods”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：Hyperbolic geometry has emerged as an effective latent space for representing complex networks, owing to its ability to capture hierarchical organization and heterogeneous conne...",
+    "reason": "论文关于双曲图表示学习，与VLA/CV/机器人/世界模型等无关"
   },
   {
     "paper_id": "2604.28065",
@@ -4972,7 +4956,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Assessing the Role of Intersection Proximity in Pedestrian Crashes: Insights from Data Mining Approach”展开，主要贡献见摘要。",
+    "summary": "用距离交叉口距离框架和关联规则挖掘分析非交叉路口行人事故，揭示事故模式差异并提出针对性对策。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4999,7 +4983,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Early Detection of Water Stress by Plant Electrophysiology: Machine Learning for Irrigation Management”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Purpose: Fast detection of plant stress is key to plant phenotyping, precision agriculture, and automated crop management. In particular, efficient irrigation management require...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5025,7 +5009,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Exponential families from a single KL identity”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Exponential families encompass the distributions central to modern machine learning -- softmax, Gaussians, and Boltzmann distributions -- and underlie the theory of variational...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5051,7 +5035,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Shuffling-Aware Optimization for Private Vector Mean Estimation”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We study $d$-dimensional unbiased mean estimation in the single-message shuffle model, where each user sends a single privatized message and the analyzer only observes the shuff...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5086,7 +5070,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“FedHarmony: Harmonizing Heterogeneous Label Correlations in Federated Multi-Label Learning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Federated Multi-Label Learning is a distributed paradigm where multiple clients possess heterogeneous multi-label data and perform collaborative learning under privacy constrain...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5115,7 +5099,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Cost-Aware Learning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：We consider the problem of Cost-Aware Learning, where sampling different component functions of a finite-sum objective incurs different costs. The objective is to reach a target...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5148,7 +5132,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“Kernelized Advantage Estimation: From Nonparametric Statistics to LLM Reasoning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Recent advances in large language models (LLMs) have increasingly relied on reinforcement learning (RL) to improve their reasoning capabilities. Three approaches have been widel...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -5180,7 +5164,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Latent-GRPO: Group Relative Policy Optimization for Latent Reasoning”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Latent reasoning offers a more efficient alternative to explicit reasoning by compressing intermediate reasoning into continuous representations and substantially shortening rea...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5206,7 +5190,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Dynamic Scaled Gradient Descent for Stable Fine-Tuning for Classifications”展开，主要贡献见摘要。",
+    "summary": "微调时梯度塌缩导致模型陷入不稳定，动态缩放正确分类样本的梯度，提升了训练稳定性和准确率。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5235,7 +5219,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Differentiable latent structure discovery for interpretable forecasting in clinical time series”展开，主要贡献见摘要。",
+    "summary": "通过",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5266,7 +5250,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Diffusion-OAMP for Joint Image Compression and Wireless Transmission”展开，主要贡献见摘要。",
+    "summary": "提出联合图像压缩与无线传输问题，以扩散模型嵌入OAMP的无训练框架，性能优于经典方法。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5296,7 +5280,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Calibrating Attribution Proxies for Reward Allocation in Participatory Weather Sensing”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Large-scale IoT weather sensing networks require incentive mechanisms to sustain participation, yet determining how much value individual data contributions bring to the network...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5330,8 +5314,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Beyond the Baseband: Adaptive Multi-Band Encoding for Full-Spectrum Bioacoustics Classification”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：Animals hear and vocalize across frequency ranges that differ substantially from humans, often extending into the ultrasonic domain. Yet most computational bioacoustics systems...",
+    "reason": "研究生物声学多频带编码，与VLA/CV等无关"
   },
   {
     "paper_id": "2604.27914",
@@ -5359,7 +5343,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Geometry-Calibrated Conformal Abstention for Language Models”展开，主要贡献见摘要。",
+    "summary": "摘要要点：When language models lack relevant knowledge for a given query, they frequently generate plausible responses that can be hallucinations, rather than admitting being agnostic abo...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5389,7 +5373,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Physical Foundation Models: Fixed hardware implementations of large-scale neural networks”展开，主要贡献见摘要。",
+    "summary": "针对大规模基础模型高能耗问题，提出物理基础模型",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5418,7 +5402,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Prediction-powered Inference by Mixture of Experts”展开，主要贡献见摘要。",
+    "summary": "摘要要点：The rapidly expanding artificial intelligence (AI) industry has produced diverse yet powerful prediction tools, each with its own network architecture, training strategy, data-p...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5450,7 +5434,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“In-Context Prompting Obsoletes Agent Orchestration for Procedural Tasks”展开，主要贡献见摘要。",
+    "summary": "将任务流程放入系统提示让模型自行编排，在旅行预订等三领域得分4.53-5.00，失败率仅0.5%-11.5%，优于LangGraph",
     "reason": "规则匹配：CV"
   },
   {
@@ -5480,7 +5464,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "本文围绕“Decoupled Descent: Exact Test Error Tracking Via Approximate Message Passing”展开，主要贡献见摘要。",
+    "summary": "摘要要点：In modern parametric model training, full-batch gradient descent (and its variants) suffers due to progressively stronger biasing towards the exact realization of training data;...",
     "reason": "规则匹配：CV"
   },
   {
@@ -5508,14 +5492,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "CV",
-      "Multimodal"
-    ],
-    "relevance_score": 1.9000000000000001,
-    "priority": "skim",
-    "summary": "本文围绕“TwinGate: Stateful Defense against Decompositional Jailbreaks in Untraceable Traffic via Asymmetric Contrastive Learning”展开，主要贡献见摘要。",
-    "reason": "规则匹配：CV、Multimodal"
+    "tags": [],
+    "relevance_score": 0.0,
+    "priority": "skip",
+    "summary": "摘要要点：Decompositional jailbreaks pose a critical threat to large language models (LLMs) by allowing adversaries to fragment a malicious objective into a sequence of individually benig...",
+    "reason": "无相关领域内容"
   },
   {
     "paper_id": "2604.27840",
@@ -5550,7 +5531,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "本文围绕“CastFlow: Learning Role-Specialized Agentic Workflows for Time Series Forecasting”展开，主要贡献见摘要。",
+    "summary": "摘要要点：Recently, large language models (LLMs) have shown great promise in time series forecasting. However, most existing LLM-based forecasting methods still follow a static generative...",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -5577,7 +5558,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "本文围绕“Probabilistic Circuits for Irregular Multivariate Time Series Forecasting”展开，主要贡献见摘要。",
-    "reason": "规则匹配：相关性低"
+    "summary": "针对不规则多元时间序列预测，CircuITS利用概率电路建模通道依赖，保证联合分布",
+    "reason": "不相关领域，时间序列预测"
   }
 ]
