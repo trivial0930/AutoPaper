@@ -3,9 +3,11 @@ from __future__ import annotations
 import unittest
 
 from datetime import datetime, timezone
+from unittest.mock import patch
 
 from paper_agents.__main__ import _last_sunday_start
-from paper_agents.agents import ClassifierAgent, CuratorAgent, NotifierAgent
+from paper_agents.agents import ClassifierAgent, CuratorAgent, NotifierAgent, SummarizerAgent
+from paper_agents.clients import OpenAIClient
 from paper_agents.config import AppConfig, SourceConfig
 from paper_agents.models import Paper
 
@@ -78,6 +80,26 @@ class AgentTests(unittest.TestCase):
         text = NotifierAgent(config)._render_text([paper], datetime(2026, 4, 30, tzinfo=timezone.utc), None)
         self.assertIn("论文日报", text)
         self.assertIn("一句话总结：本文提出统一策略模型提升机器人操作泛化。", text)
+
+    def test_fallback_summary_uses_abstract_content(self) -> None:
+        config = self.make_config()
+        paper = Paper(
+            paper_id="2501.00003",
+            title="World Model Planning",
+            authors=[],
+            abstract="We learn a latent dynamics model for robot planning. It improves long-horizon control.",
+            published="",
+            updated="",
+            categories=["cs.RO"],
+        )
+        SummarizerAgent(config).summarize(paper)
+        self.assertIn("latent dynamics model", paper.summary)
+        self.assertNotIn("主要贡献见摘要", paper.summary)
+
+    def test_unsupported_deepseek_model_falls_back(self) -> None:
+        with patch.dict("os.environ", {"DEEPSEEK_MODEL": "deepseek-v4-flash"}):
+            client = OpenAIClient("deepseek-v4-flash", "deepseek")
+        self.assertEqual(client.model, "deepseek-chat")
 
     def test_last_sunday_start_uses_configured_timezone(self) -> None:
         run_date = datetime(2026, 4, 30, 15, 0, tzinfo=timezone.utc)

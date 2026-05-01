@@ -7,7 +7,7 @@ from datetime import datetime, time, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from .agents import CuratorAgent, NotifierAgent, WorkflowAgent, papers_to_jsonable
+from .agents import CuratorAgent, NotifierAgent, SummarizerAgent, WorkflowAgent, papers_to_jsonable
 from .config import load_config
 from .db import PaperStore
 from .models import Paper
@@ -46,6 +46,12 @@ def main() -> None:
     notify_parser.add_argument("--timezone", default="Asia/Shanghai")
     notify_parser.add_argument("--report", help="Optional report path to mention in the Feishu message.")
 
+    summarize_parser = subparsers.add_parser("summarize-json", help="Re-summarize papers from a JSON file.")
+    summarize_parser.add_argument("--config", default="config.json")
+    summarize_parser.add_argument("--json", default="latest_papers.json", help="JSON file produced by run --json-out.")
+    summarize_parser.add_argument("--out", default="latest_papers.resummarized.json")
+    summarize_parser.add_argument("--limit", type=int, help="Only summarize the first N papers for testing.")
+
     args = parser.parse_args()
     if args.command == "init-config":
         init_config(args.target)
@@ -55,6 +61,8 @@ def main() -> None:
         test_feishu(args)
     elif args.command == "notify-feishu":
         notify_feishu(args)
+    elif args.command == "summarize-json":
+        summarize_json(args)
 
 
 def init_config(target: str) -> None:
@@ -121,6 +129,23 @@ def notify_feishu(args: argparse.Namespace) -> None:
         raise SystemExit("FEISHU_WEBHOOK_URL is not configured.")
     report = Path(args.report) if args.report else None
     notifier.run(selected, run_date=_parse_run_date(args.date, args.timezone), report=report)
+
+
+def summarize_json(args: argparse.Namespace) -> None:
+    config = load_config(args.config if Path(args.config).exists() else None)
+    json_path = Path(args.json)
+    if not json_path.exists():
+        raise SystemExit(f"{json_path} does not exist. Run with --json-out first.")
+    with json_path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    papers = [Paper(**item) for item in payload]
+    if args.limit:
+        papers = papers[: args.limit]
+    SummarizerAgent(config).run(papers)
+    Path(args.out).write_text(json.dumps(papers_to_jsonable(papers), ensure_ascii=False, indent=2), encoding="utf-8")
+    for paper in papers:
+        print(f"- {paper.title}\n  {paper.summary}")
+    print(f"Wrote {args.out}")
 
 
 def _parse_run_date(value: str | None, timezone_name: str) -> datetime:

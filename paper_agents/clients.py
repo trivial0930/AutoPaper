@@ -30,8 +30,12 @@ def _request_json(url: str, headers: dict[str, str] | None = None, data: dict[st
         request_headers["Content-Type"] = "application/json"
 
     request = urllib.request.Request(url, data=body, headers=request_headers)
-    with urllib.request.urlopen(request, timeout=45) as response:
-        return json.loads(response.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(request, timeout=45) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as error:
+        body = error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"HTTP {error.code} from {url}: {body}") from error
 
 
 def _text(element: ET.Element | None) -> str:
@@ -186,6 +190,7 @@ class SemanticScholarClient:
 
 class OpenAIClient:
     base_url = "https://api.openai.com/v1/responses"
+    deepseek_models = {"deepseek-chat", "deepseek-reasoner"}
 
     def __init__(self, model: str, provider: str = "openai"):
         self.provider = os.environ.get("LLM_PROVIDER", provider).lower()
@@ -205,7 +210,14 @@ class OpenAIClient:
 
     def _model_from_env(self, default: str) -> str:
         if self.provider == "deepseek":
-            return os.environ.get("DEEPSEEK_MODEL", default)
+            model = os.environ.get("DEEPSEEK_MODEL", default)
+            if model not in self.deepseek_models:
+                print(
+                    f"Warning: unsupported DeepSeek model '{model}', falling back to deepseek-chat.",
+                    file=sys.stderr,
+                )
+                return "deepseek-chat"
+            return model
         return os.environ.get("OPENAI_MODEL", default)
 
     def _api_key_from_env(self) -> str:
@@ -238,6 +250,8 @@ class OpenAIClient:
                 {"role": "user", "content": user},
             ],
             "stream": False,
+            "temperature": 0.2,
+            "max_tokens": 120,
         }
         data = _request_json(
             "https://api.deepseek.com/chat/completions",

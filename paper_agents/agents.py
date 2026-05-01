@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 from dataclasses import asdict
 from datetime import datetime, timedelta, timezone
@@ -148,26 +149,57 @@ class SummarizerAgent:
             if self._summarize_with_llm(paper):
                 return paper
         if paper.semantic_tldr:
-            paper.summary = paper.semantic_tldr
+            paper.summary = self._compact_summary(paper.semantic_tldr)
         else:
-            paper.summary = f"本文围绕“{paper.title}”展开，主要贡献见摘要。"
+            paper.summary = self._fallback_summary(paper)
         return paper
 
     def _summarize_with_llm(self, paper: Paper) -> bool:
-        system = "你是论文摘要 Agent，擅长用中文一句话概括机器学习论文贡献。"
+        system = (
+            "你是机器学习论文快报编辑。你只输出一句中文短句，"
+            "准确、具体、信息密度高，不写客套话。"
+        )
         user = f"""
-请根据论文标题和摘要，用一句中文总结核心贡献。
-要求：包含研究问题、主要方法、关键价值；不超过 60 个中文字符；不要换行。
+请为下面论文写一句中文总结。
+
+硬性要求：
+- 只输出一句话，不要编号、不要解释、不要换行
+- 35 到 55 个中文字符左右
+- 必须包含“解决什么问题 + 用什么方法/系统 + 带来什么价值”
+- 禁止写“本文围绕”“主要贡献见摘要”“提出了一种方法”等空泛句
+- 不要机械复述标题；如果是 survey/tool/dataset/simulator，请直接说明用途
 
 标题：{paper.title}
+标签：{", ".join(paper.tags)}
 已有 TLDR：{paper.semantic_tldr}
 摘要：{paper.abstract}
 """.strip()
         try:
-            paper.summary = self.llm.complete(system, user).replace("\n", " ").strip()
-        except Exception:
+            paper.summary = self._compact_summary(self.llm.complete(system, user))
+        except Exception as error:
+            print(f"Warning: LLM summary failed for {paper.paper_id}: {error}", file=sys.stderr)
             return False
         return bool(paper.summary)
+
+    def _compact_summary(self, text: str) -> str:
+        text = re.sub(r"\s+", " ", text).strip()
+        text = text.strip("` \n\r\t")
+        text = re.sub(r"^[\\-\\d\\.、）\\)\\s]+", "", text)
+        if "\n" in text:
+            text = text.splitlines()[0].strip()
+        for delimiter in ["。", "！", "？"]:
+            if delimiter in text:
+                return text.split(delimiter)[0].strip() + delimiter
+        return text[:90].strip()
+
+    def _fallback_summary(self, paper: Paper) -> str:
+        abstract = re.sub(r"\s+", " ", paper.abstract).strip()
+        if abstract:
+            first_sentence = re.split(r"(?<=[.!?])\\s+", abstract)[0].strip()
+            if len(first_sentence) > 180:
+                first_sentence = first_sentence[:177].rstrip() + "..."
+            return f"摘要要点：{first_sentence}"
+        return f"待总结：{paper.title}"
 
 
 class CuratorAgent:
