@@ -31,7 +31,7 @@
     ],
     "relevance_score": 4.199999999999999,
     "priority": "must_read",
-    "summary": "摘要要点：Driving world models serve as a pivotal technology for autonomous driving by simulating environmental dynamics. However, existing approaches predominantly focus on future scene...",
+    "summary": "HERMES++用统一驾驶世界模型结合BEV与LLM增强查询，",
     "reason": "规则匹配：CV、Multimodal、World Model"
   },
   {
@@ -67,7 +67,7 @@
     ],
     "relevance_score": 2.1,
     "priority": "skim",
-    "summary": "OmniRobotHome用48个同步摄像头实现实时3D感知，解决了多人多机器人协作中的遮挡与跟踪难题，提升了人机协作的安全性和效率。",
+    "summary": "摘要要点：Human-robot collaboration has been studied primarily in dyadic or sequential settings. However, real homes require multiadic collaboration, where multiple humans and robots shar...",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -98,7 +98,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "GenWildSplat解决稀疏无",
+    "summary": "摘要要点：Reconstructing 3D scenes from sparse, unposed images remains challenging under real-world conditions with varying illumination and transient occlusions. Existing methods rely on...",
     "reason": "规则匹配：CV"
   },
   {
@@ -143,7 +143,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "LaST-R1用潜在链式推理和联合优化算法解决VLA模型物理推理弱、适应差",
+    "summary": "针对静态模仿学习导致VLA适应性与泛化差的问题，提出LAPO联合优化物理潜在推理与动作生成，在",
     "reason": "规则匹配：CV、Multimodal、Robot Learning、VLA、World Model"
   },
   {
@@ -174,7 +174,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "将Fréchet距离作为不可行的训练目标，通过解耦估计与批大小实现视觉生成质量提升和一步生成。",
+    "summary": "通过解耦Fréchet距离估计与梯度批大小来优化该损失，解决了视觉生成中分布",
     "reason": "规则匹配：CV"
   },
   {
@@ -313,7 +313,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "摘要要点：We introduce AEGIS, A holistic benchmark for Evaluating forensic analysis of AI-Generated academic ImageS. Compared to existing benchmarks, AEGIS features three key advances: (1...",
+    "summary": "AEGIS基准评估AI生成学术图像取证，覆盖多类别伪造与多维评估，揭示当前方法局限。",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -345,7 +345,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "提出人体运动分层表示，用A4Mer自监督学习动作",
+    "summary": "摘要要点：Effective human behavior modeling requires a representation of the human body movement that capitalizes on its compositionality. We propose a hierarchical representation consist...",
     "reason": "规则匹配：CV"
   },
   {
@@ -378,7 +378,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "PhyCo用物理监督微调扩散模型和视觉语言模型奖励优化，解决视频生成物理不一致问题，提升物理真实性与可控性。",
+    "summary": "摘要要点：Modern video diffusion models excel at appearance synthesis but still struggle with physical consistency: objects drift, collisions lack realistic rebound, and material response...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -410,7 +410,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "提出连续值图像上基于循环梯度ℓ0范数的可微简单点检测方法，实现拓扑保持的图像分割，提升结构一致性。",
+    "summary": "摘要要点：Topological features play an essential role in ensuring geometric plausibility and structural consistency in image analysis tasks such as segmentation and skeletonization. Howev...",
     "reason": "规则匹配：CV"
   },
   {
@@ -435,10 +435,10 @@
     "tags": [
       "CV"
     ],
-    "relevance_score": 0.0,
+    "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "摘要要点：Night Photography Rendering (NPR) poses a significant challenge due to the extreme contrast between dark and illuminated areas in scenes, stemming from concurrent capture of sev...",
-    "reason": "纯图像处理非VLA/机器人/多模态/世界模型"
+    "summary": "提出pHVI-ISPNet框架，基于HVI色彩空间和四项改进减小夜间摄影的感知失真与色偏，在多项",
+    "reason": "仅涉及夜间摄影渲染，与目标领域无关"
   },
   {
     "paper_id": "2604.28134",
@@ -469,7 +469,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "用VecSet条件机制将初始3D形状与2D图像再生为精细3D物体，实现增强重建编辑，提升可控生成质量。",
+    "summary": "3D-ReGen用VecSet条件机制从2D图像和初始形状再生3D对象，支持增强、重建与编辑，实现可控生成最优性能。",
     "reason": "规则匹配：CV"
   },
   {
@@ -614,7 +614,7 @@
     ],
     "relevance_score": 2.9000000000000004,
     "priority": "read",
-    "summary": "FreeOcc",
+    "summary": "摘要要点：Existing learning-based occupancy prediction methods rely on large-scale 3D annotations and generalize poorly across environments. We present FreeOcc, a training-free framework...",
     "reason": "规则匹配：CV、Multimodal、Robot Learning"
   },
   {
@@ -643,7 +643,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "针对医学图像中病灶边界模糊和小病灶易被稀释问题，UHR-Net用不确定性引导超图细化网络实现更精准分割。",
+    "summary": "针对医学图像中病灶边界模糊和小病灶分割不稳定问题，提出不确定性感知超图细化网络，利用不确定性引导超图表征与对比预训练，在五个公开数据集上持续提升分割精度。",
     "reason": "规则匹配：CV"
   },
   {
@@ -709,7 +709,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "摘要要点：This comprehensive review examines the evolution and the current state of the art in three-dimensional (3D) reconstruction techniques in manufacturing applications. The analysis...",
+    "summary": "针对制造领域3D",
     "reason": "规则匹配：CV"
   },
   {
@@ -738,7 +738,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "针对点云传输带宽自适应问题，TAFA-GSGC用分层残",
+    "summary": "摘要要点：Scalable compression is essential for bandwidth-adaptive transmission, yet most learned codecs are optimized for a fixed rate-distortion point, making rate adaptation costly due...",
     "reason": "规则匹配：CV"
   },
   {
@@ -835,7 +835,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "摘要要点：3D Gaussian Splatting has emerged as a powerful scene representation for real-time novel-view synthesis. However, its standard adaptive density control relies on screen-space po...",
+    "summary": "结构感知密化利用多尺度频率分析与各向异性分裂解决高频纹理模糊问题，显著加速3D",
     "reason": "规则匹配：CV"
   },
   {
@@ -909,7 +909,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "摘要要点：Traditional Shot Boundary Detection (SBD) inherently struggles with complex transitions by formulating the task around isolated cut points, frequently yielding corrupted video s...",
+    "summary": "TransVLM用视觉语言模型融合光流先验检测连续镜头过渡段，解决传统突变检测处理复杂过渡失真的问题，性能超越现有方法并已部署生产。",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -978,7 +978,7 @@
     ],
     "relevance_score": 1.6,
     "priority": "skim",
-    "summary": "评估多模态模型和聚类方法在社交媒体视频中检测气候变化主题，发现模型能力有限但聚类能产生有意义视觉框架。",
+    "summary": "摘要要点：The pervasive growth of digital content, specifically short videos on social media platforms, has significantly altered how topics are discussed and understood in public discour...",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1053,7 +1053,7 @@
     ],
     "relevance_score": 2.8,
     "priority": "read",
-    "summary": "强化学习解决GUI智能体在长期信用分配与安全探索上的瓶颈，提供离线在线混合框架，推动自动化迈向",
+    "summary": "摘要要点：Graphical User Interface (GUI) agents have emerged as a promising paradigm for intelligent systems that perceive and interact with graphical interfaces visually. Yet supervised...",
     "reason": "规则匹配：CV、World Model"
   },
   {
@@ -1082,7 +1082,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "摘要要点：As Vision-Language Models (VLMs) become increasingly integrated into decision-making systems, it is essential to understand how visual inputs influence their behavior. This pape...",
+    "summary": "使用迭代囚徒困境测试视觉提示对多模态大模型合作行为的影响，发现图像内容和颜色线索会改变决策，并",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1113,7 +1113,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "摘要要点：The computational cost of training a vision-language model (VLM) can be reduced by sampling the training data. Previous work on efficient VLM pre-training has pointed to the imp...",
+    "summary": "提出动态聚类采样方法，通过调整语义簇权重解决长尾概念表示不足问题，降低预训练计算开销并提升模型对稀有概念的识别能力。",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1177,7 +1177,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "摘要要点：Existing talking avatar methods typically adopt an image-to-video pipeline conditioned on a static reference image within the same scene as the target generation. This restricte...",
+    "summary": "跨场景视频参考生成说话头像，用TAVR框架和三阶段训练",
     "reason": "规则匹配：CV"
   },
   {
@@ -1209,7 +1209,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "HiMix通过混合增强与层次伪迹感知，解决合成图像检测泛化差问题，在多个基准上取得最优性能。",
+    "summary": "HiMix通过分层伪影感知混合增强扩展训练分布，提升合成图像检测器对未知生成模型的泛化能力。",
     "reason": "规则匹配：CV"
   },
   {
@@ -1238,7 +1238,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "Noise2Map用端到端扩散模型统一解决遥感语义分割和变化检测，通过任务特定噪声调度直接预测分割图，避免采样代价，平均性能排名第一。",
+    "summary": "No",
     "reason": "规则匹配：CV"
   },
   {
@@ -1271,7 +1271,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "FGINet通过带掩码频率编码和门控频率注入，解决AI生成图像检测泛化性差问题，实现跨生成模型最佳性能。",
+    "summary": "频率感知门控注入网络通过带掩码频率编码和逐层门控注入",
     "reason": "规则匹配：CV"
   },
   {
@@ -1302,7 +1302,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "通过插入全局平均池化",
+    "summary": "通过插入全局平均池",
     "reason": "规则匹配：CV"
   },
   {
@@ -1373,7 +1373,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "使用带强化重放和门控网络的",
+    "summary": "采用改进SISA框架",
     "reason": "规则匹配：CV"
   },
   {
@@ -1404,7 +1404,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "用CNN模型GourNet检测芒果叶8类病害，在MBD数据集上达到97%分类准确率。",
+    "summary": "使用GourNet卷积神经网络检测芒果叶病害，在八类数据集上达97%准确率。",
     "reason": "规则匹配：CV"
   },
   {
@@ -1460,11 +1460,13 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [],
-    "relevance_score": 0.0,
+    "tags": [
+      "CV"
+    ],
+    "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "摘要要点：This paper presents a physically-informed fuzzy clustering of vertical sounding ionograms for automatically separating the ionogram into tracks suitable for further interpretati...",
-    "reason": "属于空间物理与遥感数据聚类，与机器人、多模态AI及世界模型无关。"
+    "summary": "用物理信息模糊聚类自动分割电离图并确定最优轨迹数，提升扰动条件下自动解释能力",
+    "reason": "规则匹配：CV"
   },
   {
     "paper_id": "2604.27715",
@@ -1527,7 +1529,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "提出HSTFG和PhonoSTFG图融合框架，解决越南",
+    "summary": "针对越南语场景文本描述中语言知识缺失问题，提出带音系注意力的图融合框架并构建数据集，显著提升描述准确性。",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1560,7 +1562,7 @@
     ],
     "relevance_score": 1.4,
     "priority": "skim",
-    "summary": "提出通用预训练策略解决遥感分割预训练域差距问题，引导模型避免学习域特定特征，在四个数据集上达最优。",
+    "summary": "针对遥感图像语义分割中ImageNet预训练领域差异大问题，提出引导模型避免学习领域特定特征的策略",
     "reason": "规则匹配：CV"
   },
   {
@@ -1590,7 +1592,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "针对视频快照压缩成像中",
+    "summary": "摘要要点：Video snapshot compressive imaging (SCI) enables the reconstruction of dynamic scenes from a single snapshot measurement. Recently, NeRF-based methods have shown promising recon...",
     "reason": "规则匹配：CV"
   },
   {
@@ -1623,7 +1625,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "用nnU-Net自动分割CT影像中的腹膜癌指数区域，达成非侵入性评估且Dice指标接近专家一致性。",
+    "summary": "摘要要点：Peritoneal metastases are currently assessed using diagnostic laparoscopy to determine Sugarbaker's Peritoneal Cancer Index (sPCI), which works by dividing the abdomen into 13 r...",
     "reason": "规则匹配：CV"
   },
   {
@@ -1692,7 +1694,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "发布颈椎CT-MRI刚柔配准数据集R-D-Reg，提出MSR框架融合Mamba全局和S",
+    "summary": "发布R-D-Reg数据集并提出MSR刚柔混合配准框架，融合Mamba和Swin Transformer实现颈椎CT-MRI局部解剖一致性配准。",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -1787,7 +1789,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "摘要要点：This work presents ThermoMesh, a passive thin-film thermoelectric mesh sensor designed to detect and characterize spatio-temporally sparse heat sources through conduction-based...",
+    "summary": "提出ThermoMesh薄膜热电网格传感器，通过集成电阻层实现",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -1819,7 +1821,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "GSDrive用3D高斯溅射模拟器",
+    "summary": "摘要要点：End-to-end (E2E) autonomous driving presents a promising approach for translating perceptual inputs directly into driving actions. However, prohibitive annotation costs and temp...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -1844,13 +1846,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Robot Learning"
-    ],
-    "relevance_score": 1.0,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：As autonomous vehicles slowly deploy into urban roads for limited use cases with significant edge case issues, closed facilities like marshaling yards provide a ripe case for co...",
-    "reason": "规则匹配：Robot Learning"
+    "summary": "针对调度场自动驾驶车辆因静态规则导致死锁问题，用分散动态优先级评分协调任务分配，提升吞吐量并减少高需求下故障。",
+    "reason": "不涉及VLA、CV、World Model等指定领域"
   },
   {
     "paper_id": "2604.27994",
@@ -1879,7 +1879,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "用语义展开和城镇对抗正则化改进世界模型，提高CARLA零样本迁移至未见城镇的路线完成",
+    "summary": "Dreamer世界模型结合语义展开预测和城镇对抗正则化，解决跨城镇零样本驾驶泛化问题，提高未见城镇路线完成成功率。",
     "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
@@ -1913,7 +1913,7 @@
     ],
     "relevance_score": 3.5999999999999996,
     "priority": "read",
-    "summary": "摘要要点：This paper presents an expert-guided active-inference-inspired framework for adaptive UAV swarm trajectory planning. The proposed method converts multi-UAV trajectory design fro...",
+    "summary": "将无人机集群轨迹规划转为层次概率推断，用专家引导的主动推理世界模型实现自适应规划，无需重复优化且行为更平滑稳定。",
     "reason": "规则匹配：Robot Learning、World Model"
   },
   {
@@ -1944,7 +1944,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "学习型层次化场景图匹配解决机器人定位中节点对应困难，",
+    "summary": "摘要要点：Accurate localization is a fundamental requirement for autonomous robots operating in indoor environments. Scene graphs encode the spatial structure of an environment as a hiera...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -1994,7 +1994,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "MotuBrain用统一多模态生成模型联合建模视频与动作，解决VLA缺乏细粒度动态建模问题，实现50倍实时加速。",
+    "summary": "MotuBrain用三流Mixture-of-Transformers统一建模视频和动作，解决VLA缺乏世界动力学的问题，实现多种推理模式并达到50倍实时加速。",
     "reason": "规则匹配：CV、Multimodal、Robot Learning、VLA、World Model"
   },
   {
@@ -2027,7 +2027,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "利用互联可靠性笼架构中的功能监控与异常监控，保障自动驾驶感知系统在动态场景下实现安全降级与持续开发。",
+    "summary": "摘要要点：The advancement of automated vehicles introduces complex safety challenges, particularly in dynamic and unpredictable environments where AI-enabled perception systems must opera...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2059,7 +2059,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "利用视频生成模型合成第三人称交互视频，转化为可执行行为，实现人形机器人在新场景的交互控制。",
+    "summary": "ExoActor利用大规模视频生成模型合成第三人称交互视频，转化为可执行行为，解决了人形机器人在新场景中交互建模",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2088,7 +2088,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "提出机器人策略学习全局探索难题，用TFM-S3混合局部-全局搜索与表格基础模型预测，在有限预算下加速收敛并提升最终性能。",
+    "summary": "TFM-S3用表格基础模型在SVD子空间中交替局部与全局搜索，解决了机器人策略学习全局探索难且代价高的问题，",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2124,7 +2124,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "综述利用人类视频学习机器人技能的方法，突破数据扩展瓶颈，推动通用机器人",
+    "summary": "该综述梳理了从人类视频学习机器人技能的任务、观测、动作迁移路径及数据基础，为规模化学习提供指导。",
     "reason": "规则匹配：CV、Robot Learning、VLA"
   },
   {
@@ -2164,7 +2164,7 @@
     ],
     "relevance_score": 2.9000000000000004,
     "priority": "read",
-    "summary": "从婴儿视频进行运动重定位到人形机器人，模拟多",
+    "summary": "摘要要点：Motion retargeting from humans to human-like artificial agents is becoming increasingly important as humanoid robots grow more capable. However, most existing approaches focus o...",
     "reason": "规则匹配：CV、Multimodal、Robot Learning"
   },
   {
@@ -2188,11 +2188,14 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [],
-    "relevance_score": 1.0,
-    "priority": "skip",
+    "tags": [
+      "Robot Learning",
+      "VLA"
+    ],
+    "relevance_score": 3.2,
+    "priority": "read",
     "summary": "摘要要点：Despite advances in dexterous hand manipulation, robotic hand design is still largely decoupled from task-driven evaluation and control, limiting systematic optimization. Existi...",
-    "reason": "论文聚焦机器人手部设计优化，不涉及VLA/CV等主题"
+    "reason": "规则匹配：Robot Learning、VLA"
   },
   {
     "paper_id": "2604.27508",
@@ -2299,7 +2302,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "针对密集动态障碍物避障问题，提出RAY-TOLD混合架构结合激光雷达潜在动力学与策略混合采样，显著降低碰撞率并提升导航可靠性。",
+    "summary": "RAY-TOLD融合MPPI短视规划与强化学习长视策略，解决密集动态障碍物避碰，提升导航可靠性与安全性。",
     "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
@@ -2329,7 +2332,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "摘要要点：Robotic-assisted surgery offers significant clinical advantages but largely eliminates direct haptic feedback, increasing the risk of excessive tool-tissue interaction forces. A...",
+    "summary": "模块化仪器集成腕部力传感器与实时触觉反馈，提升机器人手术训练中力调节精度与任务成功率。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2364,7 +2367,7 @@
     ],
     "relevance_score": 1.8,
     "priority": "skim",
-    "summary": "摘要要点：Simulating optical tactile sensors presents significant challenges due to their high deformability and intricate optical properties. To address these issues and enable a physica...",
+    "summary": "DOT-Sim用MPM和残",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -2390,11 +2393,14 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [],
-    "relevance_score": 0.0,
-    "priority": "skip",
-    "summary": "用分层数据流图和STRIDE分析LLM机器人系统的三类威胁，揭示攻击跨边界传播至物理执行的安全漏洞。",
-    "reason": "论文关注机器人系统安全威胁建模，非VLA等核心领域"
+    "tags": [
+      "Multimodal",
+      "Robot Learning"
+    ],
+    "relevance_score": 1.8,
+    "priority": "skim",
+    "summary": "摘要要点：As large language models are integrated into autonomous robotic systems for task planning and control, compromised inputs or unsafe model outputs can propagate through the plann...",
+    "reason": "规则匹配：Multimodal、Robot Learning"
   },
   {
     "paper_id": "2604.27224",
@@ -2430,7 +2436,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "提出触觉感知分层策略，结合人类演示与强化学习，使四足机器人在接触丰富操作任务中平均性能提升28.54%。",
+    "summary": "摘要要点：Quadrupedal loco-manipulation is commonly built on visual perception and proprioception. Yet reliable contact-rich manipulation remains difficult: vision and proprioception alon...",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -2461,7 +2467,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "摘要要点：Automatic Emergency Braking (AEB) systems represent a safety-critical national interest, with the National Highway Traffic Safety Administration (NHTSA) Federal Motor Vehicle Sa...",
+    "summary": "用GPU加速蒙特卡洛方法解决AEB系统在不确定性下的实时评估问题，比CPU快54倍以上。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2490,7 +2496,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "摘要要点：Contact-rich manipulation is challenging due to its high dimensionality, the requirement for long time horizons, and the presence of hybrid contact dynamics. Sampling-based meth...",
+    "summary": "针对接触丰富操作的高维度和长时域难题，提出Global-MPPI框架融合全局探索",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -2520,7 +2526,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "摘要要点：We present the Field of Safe Motion (FSM), a quantitative safety model for determining whether a driver maintains a collision-free escape route, or \"out,\" at any given moment by...",
+    "summary": "用可达性分析将安全行驶域概念操作化，提供可解释的定量工具评估驾驶安全。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2591,7 +2597,7 @@
     ],
     "relevance_score": 2.1,
     "priority": "skim",
-    "summary": "从稀疏观测重建",
+    "summary": "用RecGen生成框架解决稀疏观测下多物体3D场景重建，形状精度提升30.1%。",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -2713,7 +2719,7 @@
     ],
     "relevance_score": 3.2,
     "priority": "read",
-    "summary": "用NeRF和可达集建模障碍物与机器人能力，通过约束",
+    "summary": "摘要要点：Safe navigation in cluttered environments is an important challenge for autonomous systems. Robots navigating through obstacle ridden scenarios need to be able to navigate safel...",
     "reason": "规则匹配：Robot Learning、VLA"
   },
   {
@@ -2738,7 +2744,7 @@
     "pdf_url": "https://arxiv.org/pdf/2604.26897v1",
     "primary_category": "cs.RO",
     "semantic_tldr": "",
-    "citation_count": 0,
+    "citation_count": null,
     "venue": "",
     "tags": [
       "Robot Learning",
@@ -2747,7 +2753,7 @@
     ],
     "relevance_score": 5.0,
     "priority": "must_read",
-    "summary": "提出折纸触手抓取方法，",
+    "summary": "折纸触手夹具通过肌腱驱动和随机缠绕实现通用抓取，仅需单根肌腱即可完成复杂形状物体稳健夹持。",
     "reason": "规则匹配：Robot Learning、VLA、World Model"
   },
   {
@@ -2770,8 +2776,8 @@
     "abs_url": "https://arxiv.org/abs/2604.26857",
     "pdf_url": "https://arxiv.org/pdf/2604.26857v1",
     "primary_category": "cs.CV",
-    "semantic_tldr": "",
-    "citation_count": null,
+    "semantic_tldr": "These findings establish knowledge distillation as a requirement for deploying accurate, safety-critical VRU detection on edge hardware.",
+    "citation_count": 0,
     "venue": "",
     "tags": [
       "CV",
@@ -2779,7 +2785,7 @@
     ],
     "relevance_score": 2.1,
     "priority": "skim",
-    "summary": "使用知识蒸馏训练紧凑YOLOv8-S模型，解决边缘设备INT8量化下大模型精度崩溃问题，实现3.9倍压缩且降低44%误报率。",
+    "summary": "These findings establish knowledge distillation as a requirement for deploying accurate, s",
     "reason": "规则匹配：CV、Robot Learning"
   },
   {
@@ -2888,7 +2894,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "在有限仿真训练的无人机",
+    "summary": "用固定规则高层与在线目标条件强化学习低层框架，提升无人机搜救任务在有限仿真训练下的早期安全性和样本效率。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -2928,7 +2934,7 @@
     ],
     "relevance_score": 4.3999999999999995,
     "priority": "must_read",
-    "summary": "X-WAM用异步去噪统一实时动作执行与4D世界建模，在机器人任务中实现近91%成功率并生成高保真4D重建。",
+    "summary": "X-WAM用异步去噪采样统一预训练视频先验，解决实时动作执行与4D合成不平衡，实现高成功率与高保真重建。",
     "reason": "规则匹配：CV、Robot Learning、World Model"
   },
   {
@@ -2993,7 +2999,7 @@
     ],
     "relevance_score": 4.300000000000001,
     "priority": "must_read",
-    "summary": "ATLAS provides time-synchronized visualization of multi-modal robotic data, including mult",
+    "summary": "ATLAS多模态标注工具解决机器人长视界动作分割标注难题，通过同步可视化视频与力觉信号等数据，减少时间误差",
     "reason": "规则匹配：CV、Robot Learning、VLA"
   },
   {
@@ -3023,7 +3029,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "STAR-Filter用星形集过滤加速噪声环境中凸自由空间近似，显著降低计算时间且保持鲁棒性。",
+    "summary": "摘要要点：Approximating collision-free space is fundamental to robot planning in complex environments. Convex geometric representations, such as polytopes and ellipsoids, are widely emplo...",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -3084,7 +3090,7 @@
     ],
     "relevance_score": 1.8,
     "priority": "skim",
-    "summary": "LLM-Flax用大语言模型驱动的神经符号框架消除人工规则和训练数据，在机器人任务规划中平均成功率提升0.117。",
+    "summary": "摘要要点：Deploying a neuro-symbolic task planner on a new domain today requires significant manual effort: a domain expert must author relaxation and complementary rules, and hundreds of...",
     "reason": "规则匹配：Multimodal、Robot Learning"
   },
   {
@@ -3217,7 +3223,7 @@
     ],
     "relevance_score": 1.0,
     "priority": "skip",
-    "summary": "摘要要点：As with every emerging technology, new tools in the hands of artists reshape the nature of artwork creation. Current frameworks for robotics in arts deploy the robot as an auton...",
+    "summary": "通过机器人化身Alter-Ego让艺术家远程具身体验舞蹈、戏剧和绘画创作，突破物理限制并增强创造性表达。",
     "reason": "规则匹配：Robot Learning"
   },
   {
@@ -3279,8 +3285,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Most familiar equilibrium concepts, such as Nash and correlated equilibrium, guarantee only that no single player can improve their utility by deviating unilaterally. They offer...",
-    "reason": "规则匹配：相关性低"
+    "summary": "针对传统均衡无法应对联盟偏差的问题，提出最小化平均或最大联盟增益的均衡概念，保证了存在性与计算可行性。",
+    "reason": "纯博弈论研究，与VLA等方向无关"
   },
   {
     "paper_id": "2604.28181",
@@ -3309,7 +3315,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Realistic long-horizon productivity work is strongly conditioned on user-specific computer environments, where much of the work context is stored and organized through directory...",
+    "summary": "大规模合成计算机方法生成长时间生产力模拟数据，通过文件夹结构与内容物模拟用户环境",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3333,13 +3339,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Multimodal"
-    ],
-    "relevance_score": 0.8,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "用LLM精炼Transformer构建的EEG图边集，消除冗余边，提升癫痫检测准确率并",
-    "reason": "规则匹配：Multimodal"
+    "summary": "利用大语言模型作为图边精炼器去除EEG噪声图中的冗余边，提升癫痫检测准确率和",
+    "reason": "论文涉及医疗信号处理与LLM，非指定领域"
   },
   {
     "paper_id": "2604.28158",
@@ -3441,7 +3445,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "Crab通过e",
+    "summary": "Crab通过eBPF语义监控和",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3467,8 +3471,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "针对多轮提示注入攻击检测，通过提取语言模型残差流中的“对抗躁动”轨迹特征，将检测率从76.2%提升至93.8%。",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：Multi-turn prompt injection follows a known attack path -- trust-building, pivoting, escalation but text-level defenses miss covert attacks where individual turns appear benign....",
+    "reason": "与VLA、CV、机器人学习等领域无关"
   },
   {
     "paper_id": "2604.28125",
@@ -3496,7 +3500,7 @@
     "relevance_score": 0.0,
     "priority": "skip",
     "summary": "摘要要点：Sign languages, of any geographical or accentual variation, understandably face continuous scrutiny under the ever present popularity of verbal dictation and audism. Through thi...",
-    "reason": "规则匹配：相关性低"
+    "reason": "批判AI社会影响，无关技术领域"
   },
   {
     "paper_id": "2604.28119",
@@ -3562,7 +3566,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "针对Transformer模型故障难以诊断的问题，提出DEFault++层次学习诊断方法，实现超过0.96的AUROC并提升修复准确率。",
+    "summary": "摘要要点：Transformer models are widely deployed in critical AI applications, yet faults in their attention mechanisms, projections, and other internal components often degrade behavior s...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3592,7 +3596,7 @@
     "relevance_score": 0.0,
     "priority": "skip",
     "summary": "摘要要点：This work proposes novel splitting techniques for argumentation formalisms that incorporate supports between defeasible elements. We base our studies on bipolar set-based argume...",
-    "reason": "该论文涉及论证框架拆分，与相关领域无关"
+    "reason": "规则匹配：相关性低"
   },
   {
     "paper_id": "2604.28098",
@@ -3622,7 +3626,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "用规模、时长、模态三维框架系统化课堂",
+    "summary": "提出课堂互动研究方法论的三维框架，解决研究定位模糊问题，并",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3704,13 +3708,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Multimodal"
-    ],
-    "relevance_score": 0.8,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Fine-tuning large language models (LLMs) on narrowly misaligned data generalizes to broadly misaligned behavior, a phenomenon termed emergent misalignment (EM). While prior work...",
-    "reason": "规则匹配：Multimodal"
+    "summary": "通过微调Qwen 2.5 32B Instruct于六个领域，发现新兴不对齐人格存在一致与反转两种模式，质疑其一致性",
+    "reason": "论文讨论LLM对齐与安全，与指定领域无关。"
   },
   {
     "paper_id": "2604.28076",
@@ -3736,11 +3738,13 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [],
-    "relevance_score": 0.0,
+    "tags": [
+      "Multimodal"
+    ],
+    "relevance_score": 0.8,
     "priority": "skip",
     "summary": "摘要要点：Large Language Models (LLMs) have advanced Table Question Answering, where most queries can be answered by extracting information or simple aggregation. However, a common class...",
-    "reason": "领域为表格问答，非VLA/CV/机器人等目标方向"
+    "reason": "规则匹配：Multimodal"
   },
   {
     "paper_id": "2604.28075",
@@ -3768,7 +3772,7 @@
     "relevance_score": 0.0,
     "priority": "skip",
     "summary": "摘要要点：Recent research has shown that filtering massive English web corpora into high-quality subsets significantly improves training efficiency. However, for high-resource non-English...",
-    "reason": "论文主题为德语语言模型数据过滤，与指定领域无关。"
+    "reason": "规则匹配：相关性低"
   },
   {
     "paper_id": "2604.28056",
@@ -3834,7 +3838,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "PROMISE-AD用token化时序Transformer建模不规则就诊与删失数据，实现",
+    "summary": "摘要要点：Individualized Alzheimer's disease (AD) progression prediction requires models that use irregular visits, account for censoring, avoid diagnostic leakage, and provide calibrated...",
     "reason": "规则匹配：CV"
   },
   {
@@ -3861,7 +3865,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "通过文献综述与案例数据分析，揭示AI系统未开发或放弃的六类影响因素，以填补预决策阶段研究空白。",
+    "summary": "通过文献综述与案例调查，识别AI系统未开发或放弃的六大因素，揭示伦理之外的组织动因以实现早期干预。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3887,7 +3891,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "生产T2SQL缺乏评估框架，STEF无需schema从自然语言和SQL对齐特征生成0-100准确度分数，实现持续监控优化。",
+    "summary": "提出STEF框架，通过语义特征对齐评估生产环境Text-to-SQL系统的SQL准确性，无需数据库模式即可实现持续监控与改进。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -3983,8 +3987,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Fairness in machine learning remains challenging due to its ethical complexity, the absence of a universal definition, and the need for context-specific bias metrics. Existing m...",
-    "reason": "论文关于机器学习公平性，与VLA等无关。"
+    "summary": "MIFair基于互信息框架，",
+    "reason": "规则匹配：相关性低"
   },
   {
     "paper_id": "2604.28028",
@@ -4044,7 +4048,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "摘要要点：Design Structure Matrix (DSM) modularization, the task of partitioning system elements into cohesive modules, is a fundamental combinatorial challenge in engineering design. Tra...",
+    "summary": "用大语言模型以近参考质量30次迭代完成DSM模块化，无需专用代码，发现领域",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -4076,7 +4080,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：We reframe clinician overrides of clinical AI recommendations as implicit preference data - the same signal structure exploited by reinforcement learning from human feedback (RL...",
+    "summary": "解决临床AI建议被",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4108,7 +4112,7 @@
     ],
     "relevance_score": 4.8,
     "priority": "must_read",
-    "summary": "为平衡VLA模型高延迟非确定性与企业控制回路实时性，提出分离反射与监督的架构",
+    "summary": "摘要要点：Integrating multimodal foundation models into enterprise ecosystems presents a fundamental software architecture challenge. Architects must balance competing quality attributes:...",
     "reason": "规则匹配：CV、Multimodal、VLA"
   },
   {
@@ -4141,7 +4145,7 @@
     ],
     "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "摘要要点：This paper examines how different types of large language model (LLM) agents perform on scientific visualization (SciVis) tasks, where users generate visualization workflows fro...",
+    "summary": "比较领域专用、计算机使用与通用编码三类LLM智能体在科学可视化中的效果，揭示各范式性能与成本权衡。",
     "reason": "规则匹配：Multimodal"
   },
   {
@@ -4170,8 +4174,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "ITS-Mina用HHO优化全MLP框架，通过迭代精炼与外部注意力，低成本",
-    "reason": "规则匹配：相关性低"
+    "summary": "ITS-Mina用全MLP框架结合迭代精炼和外部注意力，解决多元时间序列预测问题，实现线性复杂度下的SOTA性能。",
+    "reason": "该论文主题为时间序列预测，与指定领域无关。"
   },
   {
     "paper_id": "2604.27977",
@@ -4232,8 +4236,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "使用LLM与扩散模型生成个性化宝可梦卡牌，解决元游戏重复性问题，提升玩家参与满意度",
-    "reason": "与目标领域无关"
+    "summary": "用LLM和扩散模型生成个性化宝可梦卡牌，解决卡牌游戏策略同",
+    "reason": "不涉及VLA、CV等指定领域"
   },
   {
     "paper_id": "2604.27969",
@@ -4291,7 +4295,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "在ABA框架",
+    "summary": "为降低ABA框架推理的高计算复杂度，提出知识库层面分割方法并推广参数化版本，有效缩小搜索空间。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4321,7 +4325,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Designing mechanical linkages involves combinatorial topology selection and continuous parameter fitting. We show that language models can systematically improve linkage designs...",
+    "summary": "语言模型结合符号反射与模块化优化解决机械连杆设计问题，几何误差降低68%，结构有效性提升134%。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4344,13 +4348,11 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [
-      "Multimodal"
-    ],
-    "relevance_score": 0.8,
+    "tags": [],
+    "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Recent large language models (LLMs) have achieved impressive reasoning milestones but continue to struggle with high computational costs, logical inconsistencies, and sharp perf...",
-    "reason": "规则匹配：Multimodal"
+    "summary": "将自然语言转为",
+    "reason": "论文关注LLM与ASP结合的非单调推理，与指定领域无关。"
   },
   {
     "paper_id": "2604.27947",
@@ -4377,7 +4379,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：In this paper an attractor FCM is created, tested, and analyzed. This FCM is neither a hebbian based nor agentic, nor a hybrid; it rather is a gradient descent based, physics co...",
+    "summary": "用牛顿法定位固定点吸引子并联合梯度下降自适应调整，",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4405,7 +4407,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Collective intelligence emerges across biological, physical, and artificial systems without central coordination, yet a unifying principle governing such behaviour remains elusi...",
+    "summary": "提出博弈论自由能原理统一贝叶斯推断与博弈论，为多智能体",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4437,7 +4439,7 @@
     ],
     "relevance_score": 1.9000000000000001,
     "priority": "skim",
-    "summary": "检索增强的多智能体框架MM-StanceDet通过辩论与自反思解决多模态立场检测中融合困难问题，显著超越现有方法。",
+    "summary": "摘要要点：Multimodal Stance Detection (MSD) is crucial for understanding public discourse, yet effectively fusing text and image, especially with conflicting signals, remains challenging....",
     "reason": "规则匹配：CV、Multimodal"
   },
   {
@@ -4466,7 +4468,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：We introduce a framework called LAPITHS (Language model Analysis through Paradigm grounded Interpretations of Theses about Human likenesS) and use it to show that several major...",
+    "summary": "LAPITHS框架通过最小认知网格和行为比较检验AI",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4496,11 +4498,13 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [],
-    "relevance_score": 0.0,
+    "tags": [
+      "Multimodal"
+    ],
+    "relevance_score": 0.8,
     "priority": "skip",
-    "summary": "摘要要点：Peer review is a multi-stage process involving reviews, rebuttals, meta-reviews, final decisions, and subsequent manuscript revisions. Recent advances in large language models (...",
-    "reason": "与VLA、CV、机器人学习等无关"
+    "summary": "这篇综述梳理了LLM在同行评审生成、",
+    "reason": "规则匹配：Multimodal"
   },
   {
     "paper_id": "2604.27920",
@@ -4526,7 +4530,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Preserving affective nuance remains a challenge in Machine Translation (MT), where semantic equivalence often takes precedence over emotional fidelity. This paper evaluates the...",
+    "summary": "评估EuroLLM等小模型在回译中保留28种细粒度情感的能力，发现情感提示可提升保留效果。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4557,7 +4561,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "摘要要点：Persistent AI memory is often reduced to a retrieval problem: store prior interactions as text, embed them, and ask the model to recover relevant context later. This design is u...",
+    "summary": "面向AI记忆的事实可靠性问题，提出迭代模式感知写入方法，使记忆准确率提升至97%以上。",
     "reason": "规则匹配：CV"
   },
   {
@@ -4619,7 +4623,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：In recent years, physics-informed neural networks (PINNs) have gained significant attention for solving differential equations, although they suffer from two fundamental limitat...",
+    "summary": "针对局部高幅度源项导致的极端损失不平衡，采用自适应小波基PINN加速训练并超越同类方法。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4647,7 +4651,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Machine learning models can learn from data samples to carry out various tasks efficiently. When data samples are adversarially manipulated, such as by insertion of carefully cr...",
+    "summary": "针对量子分类器对抗攻击，用量子自动编码",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4731,7 +4735,7 @@
     "relevance_score": 0.0,
     "priority": "skip",
     "summary": "摘要要点：The proliferation of capable and efficient machine learning (ML) models marks one of the strongest methodological shifts in signal processing (SP) in its nearly 100-year history...",
-    "reason": "与VLA、CV、Robot Learning等主题无关"
+    "reason": "规则匹配：相关性低"
   },
   {
     "paper_id": "2604.28149",
@@ -4760,7 +4764,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "针对时间序列基础模型在电网负荷预测中的黑箱问题，提出协变量掩码高效SHAP方法，让",
+    "summary": "摘要要点：Time Series Foundation Models (TSFMs) have recently emerged as general-purpose forecasting models and show considerable potential for applications in energy systems. However, ap...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4788,7 +4792,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "提出PGP方法通过二次惩罚正则化解决约束探索的全局收敛问题，首次实现策略梯度法在非凸约束下的最后迭代最优性保证。",
+    "summary": "摘要要点：Efficient exploration is a central problem in reinforcement learning and is often formalized as maximizing the entropy of the state-action occupancy measure. While unconstrained...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -4817,8 +4821,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "TACHIOM通过token感知聚类和分层索引，解决多向量检索的高计算",
-    "reason": "规则匹配：相关性低"
+    "summary": "摘要要点：Multivector retrieval models achieve state-of-the-art effectiveness through fine-grained token-level representations, but their deployment incurs substantial computational and m...",
+    "reason": "论文涉及信息检索，与指定方向无关"
   },
   {
     "paper_id": "2604.28109",
@@ -4870,11 +4874,13 @@
     "semantic_tldr": "",
     "citation_count": null,
     "venue": "",
-    "tags": [],
-    "relevance_score": 0.0,
+    "tags": [
+      "CV"
+    ],
+    "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "摘要要点：Accurate state estimation of nonlinear dynamical systems is fundamental to modern aerospace operations across air, sea, and space domains. Online tracking of adversarial unmanne...",
-    "reason": "不相关领域，属于控制与估计"
+    "summary": "针对退化传感下无人机状态估计不准问题，提出贝叶斯神经卡尔曼",
+    "reason": "规则匹配：CV"
   },
   {
     "paper_id": "2604.28102",
@@ -4901,7 +4907,7 @@
     "relevance_score": 0.0,
     "priority": "skip",
     "summary": "摘要要点：Solving practical multi-depot vehicle routing problems (MDVRP) is a challenging optimization task central to modern logistics, increasingly driven by e-commerce. To address the...",
-    "reason": "论文解决的是物流路径优化问题，与VLA、CV、机器人学习等无关。"
+    "reason": "论文研究车辆路径问题的神经求解，与指定领域无关"
   },
   {
     "paper_id": "2604.28070",
@@ -4928,8 +4934,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Hyperbolic geometry has emerged as an effective latent space for representing complex networks, owing to its ability to capture hierarchical organization and heterogeneous conne...",
-    "reason": "论文关于双曲图表示学习，与VLA/CV/机器人/世界模型等无关"
+    "summary": "提出统一开源框架解决双曲图表示学习方法碎片化问题，集成多种嵌入",
+    "reason": "规则匹配：相关性低"
   },
   {
     "paper_id": "2604.28065",
@@ -4956,8 +4962,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "用距离交叉口距离框架和关联规则挖掘分析非交叉路口行人事故，揭示事故模式差异并提出针对性对策。",
-    "reason": "规则匹配：相关性低"
+    "summary": "利用关联规则挖掘分析路易斯安那州非交叉口行人碰撞数据，发现50%事故发生在交叉口198英尺内，揭示距离变化的事故模式并推荐对策。",
+    "reason": "纯交通安全分析，与VLA等主题无关"
   },
   {
     "paper_id": "2604.28038",
@@ -4983,7 +4989,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Purpose: Fast detection of plant stress is key to plant phenotyping, precision agriculture, and automated crop management. In particular, efficient irrigation management require...",
+    "summary": "利用电生理信号与自动机器学习框架，实现温室番茄水分胁迫的早期检测，分类精度达92%，优化灌溉管理。",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5070,8 +5076,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Federated Multi-Label Learning is a distributed paradigm where multiple clients possess heterogeneous multi-label data and perform collaborative learning under privacy constrain...",
-    "reason": "规则匹配：相关性低"
+    "summary": "FedHarmony通过共识相关性和加权聚合协调异构标签相关性，解决联邦多标签学习中标签相关漂移问题",
+    "reason": "与VLA、CV、机器人学习等无关"
   },
   {
     "paper_id": "2604.28020",
@@ -5099,7 +5105,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：We consider the problem of Cost-Aware Learning, where sampling different component functions of a finite-sum objective incurs different costs. The objective is to reach a target...",
+    "summary": "提出对有限和优化中不同成本采样问题，使用 Cost-Aware SGD 和 Cost-Aware GRPO，在 LLM 上减少约 30%计算成本",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5190,7 +5196,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "微调时梯度塌缩导致模型陷入不稳定，动态缩放正确分类样本的梯度，提升了训练稳定性和准确率。",
+    "summary": "针对微调中梯度抵消导致的",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5219,7 +5225,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "通过",
+    "summary": "摘要要点：Background: Timely, uncertainty-aware forecasting from irregular electronic health records (EHR) can support critical-care decisions, yet most approaches either impute to a grid...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5250,7 +5256,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "提出联合图像压缩与无线传输问题，以扩散模型嵌入OAMP的无训练框架，性能优于经典方法。",
+    "summary": "Diffusion-OAMP将预训练扩散模型嵌入OAMP算法，无需训练即可实现联合图像压缩与无线传输",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5280,7 +5286,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Large-scale IoT weather sensing networks require incentive mechanisms to sustain participation, yet determining how much value individual data contributions bring to the network...",
+    "summary": "用可微分AI天气模型的",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5315,7 +5321,7 @@
     "relevance_score": 0.0,
     "priority": "skip",
     "summary": "摘要要点：Animals hear and vocalize across frequency ranges that differ substantially from humans, often extending into the ultrasonic domain. Yet most computational bioacoustics systems...",
-    "reason": "研究生物声学多频带编码，与VLA/CV等无关"
+    "reason": "论文属于生物声学音频处理，与给定领域无关。"
   },
   {
     "paper_id": "2604.27914",
@@ -5373,7 +5379,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "针对大规模基础模型高能耗问题，提出物理基础模型",
+    "summary": "摘要要点：Foundation models are deep neural networks (such as GPT-5, Gemini~3, and Opus~4) trained on large datasets that can perform diverse downstream tasks -- text and code generation,...",
     "reason": "规则匹配：相关性低"
   },
   {
@@ -5434,7 +5440,7 @@
     ],
     "relevance_score": 1.1,
     "priority": "skip",
-    "summary": "将任务流程放入系统提示让模型自行编排，在旅行预订等三领域得分4.53-5.00，失败率仅0.5%-11.5%，优于LangGraph",
+    "summary": "针对程序性任务，用系统提示内上下文代替外部编排框架，使模型自编排",
     "reason": "规则匹配：CV"
   },
   {
@@ -5495,8 +5501,8 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "摘要要点：Decompositional jailbreaks pose a critical threat to large language models (LLMs) by allowing adversaries to fragment a malicious objective into a sequence of individually benig...",
-    "reason": "无相关领域内容"
+    "summary": "TwinGate用",
+    "reason": "论文主题为LLM安全防御，无关VLA等方向。"
   },
   {
     "paper_id": "2604.27840",
@@ -5558,7 +5564,7 @@
     "tags": [],
     "relevance_score": 0.0,
     "priority": "skip",
-    "summary": "针对不规则多元时间序列预测，CircuITS利用概率电路建模通道依赖，保证联合分布",
-    "reason": "不相关领域，时间序列预测"
+    "summary": "用CircuITS概率电路模型实现不规则多元时间序列的联合分布建模，在保证边缘化一致性的同时提升了预测准确度。",
+    "reason": "规则匹配：相关性低"
   }
 ]
