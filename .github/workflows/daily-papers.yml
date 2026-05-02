@@ -2,22 +2,25 @@ name: Daily VLA/CV Papers
 
 on:
   schedule:
-    # 09:00 Asia/Shanghai.
-    - cron: "0 1 * * *"
+    # Wednesday 09:00 Asia/Shanghai: collect Monday-Wednesday papers.
+    - cron: "0 1 * * 3"
+    # Sunday 09:00 Asia/Shanghai: collect Thursday-Sunday papers.
+    - cron: "0 1 * * 0"
   workflow_dispatch:
     inputs:
       days:
         description: "Lookback window in days"
         required: false
         default: "2"
-      since_last_sunday:
-        description: "Collect from the most recent Sunday 00:00 to now"
+      window:
+        description: "Date window to collect"
         required: false
-        default: "true"
+        default: "split_week"
         type: choice
         options:
-          - "true"
-          - "false"
+          - "split_week"
+          - "last_sunday"
+          - "days"
       no_llm:
         description: "Disable OpenAI classification and summarization"
         required: false
@@ -81,9 +84,21 @@ jobs:
           if [ "${{ github.event.inputs.skip_semantic || 'false' }}" = "true" ]; then
             EXTRA_ARGS="$EXTRA_ARGS --skip-semantic"
           fi
-          if [ "${{ github.event.inputs.since_last_sunday || 'true' }}" = "true" ]; then
-            EXTRA_ARGS="$EXTRA_ARGS --since-last-sunday --timezone Asia/Shanghai"
-          fi
+          WINDOW="${{ github.event.inputs.window || 'split_week' }}"
+          case "$WINDOW" in
+            split_week)
+              EXTRA_ARGS="$EXTRA_ARGS --split-week-window --timezone Asia/Shanghai"
+              ;;
+            last_sunday)
+              EXTRA_ARGS="$EXTRA_ARGS --since-last-sunday --timezone Asia/Shanghai"
+              ;;
+            days)
+              ;;
+            *)
+              echo "::error::Unsupported window: $WINDOW"
+              exit 1
+              ;;
+          esac
           python -m paper_agents run --config config.json --days "$DAYS" $EXTRA_ARGS --json-out latest_papers.json
 
       - name: Commit report

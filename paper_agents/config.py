@@ -14,6 +14,7 @@ class SourceConfig:
     vla_keywords: list[str] = field(default_factory=list)
     cv_keywords: list[str] = field(default_factory=list)
     world_model_keywords: list[str] = field(default_factory=list)
+    world_action_model_keywords: list[str] = field(default_factory=list)
 
 
 @dataclass

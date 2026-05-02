@@ -1,13 +1,13 @@
 # VLA / CV / World Model Daily Paper Agents
 
-这是一个自动追踪 VLA、CV、Robot Learning 和 World Model 论文更新的 Agent 工作流。它会从 arXiv 抓取论文，补充 Semantic Scholar 元数据，筛选相关论文，生成一句话中文总结，输出 Markdown 日报，并可推送到飞书群。
+这是一个自动追踪 VLA、CV、Robot Learning、World Model 和 World Action Model 论文更新的 Agent 工作流。它会从 arXiv 抓取论文，补充 Semantic Scholar 元数据，筛选相关论文，生成一句话中文总结，输出 Markdown 日报，并可推送到飞书群。
 
-默认自动化方式是 GitHub Actions：每天定时运行、生成 `daily_papers/YYYY-MM-DD.md`、更新 `latest_papers.json`，并把结果提交回仓库。
+默认自动化方式是 GitHub Actions：每周三推送周一到周三的论文，每周日推送周四到周日的论文，生成 `daily_papers/YYYY-MM-DD.md`、更新 `latest_papers.json`，并把结果提交回仓库。
 
 ## 功能
 
-- 每天从 arXiv 抓取 `cs.CV`、`cs.RO`、`cs.AI`、`cs.LG`
-- 筛选 VLA、CV、Robot Learning、Multimodal、World Model 相关论文
+- 每周三和周日从 arXiv 抓取 `cs.CV`、`cs.RO`、`cs.AI`、`cs.LG`
+- 筛选 VLA、CV、Robot Learning、Multimodal、World Model、World Action Model 相关论文
 - 使用 DeepSeek V4 生成简洁中文一句话总结
 - 生成 Markdown 日报和完整 JSON
 - 可选用 Semantic Scholar 补充 TLDR、引用数、PDF 链接
@@ -20,7 +20,7 @@
 | --- | --- | --- |
 | `CollectorAgent` | 从 arXiv API 按日期和分类抓取论文 | 否 |
 | `MetadataAgent` | 从 Semantic Scholar 补充 TLDR、引用数、PDF 链接 | 否 |
-| `ClassifierAgent` | 判断论文是否属于 VLA、CV、World Model 等方向 | 可选 |
+| `ClassifierAgent` | 判断论文是否属于 VLA、CV、World Model、World Action Model 等方向 | 可选 |
 | `SummarizerAgent` | 为每篇论文生成一句话中文总结 | 可选 |
 | `CuratorAgent` | 按相关性筛出每日值得看的论文 | 否 |
 | `PublisherAgent` | 生成 Markdown 日报 | 否 |
@@ -138,7 +138,10 @@ Value: 飞书机器人签名密钥
 Actions -> Daily VLA/CV Papers -> Run workflow
 ```
 
-保持默认参数即可。默认会抓取从最近一个周日 00:00 到当前时间的论文，方便测试。
+保持默认参数即可。默认会使用半周窗口：
+
+- 周一到周三运行时，抓取周一 00:00 到当前时间
+- 周四到周日运行时，抓取周四 00:00 到当前时间
 
 成功后你会看到：
 
@@ -152,19 +155,20 @@ Actions -> Daily VLA/CV Papers -> Run workflow
 
 | 参数 | 默认值 | 说明 |
 | --- | --- | --- |
-| `days` | `2` | 当 `since_last_sunday=false` 时，抓最近 N 天 |
-| `since_last_sunday` | `true` | 从最近一个周日 00:00 抓到当前时间 |
+| `days` | `2` | 当 `window=days` 时，抓最近 N 天 |
+| `window` | `split_week` | `split_week` 为半周窗口；`last_sunday` 为最近周日到现在；`days` 为最近 N 天 |
 | `no_llm` | `false` | 是否禁用 LLM 分类和总结 |
 | `skip_semantic` | `false` | 是否跳过 Semantic Scholar |
 
-定时任务默认每天北京时间 09:00 运行。配置位置在 `.github/workflows/daily-papers.yml`：
+定时任务默认北京时间每周三 09:00 和每周日 09:00 运行。配置位置在 `.github/workflows/daily-papers.yml`：
 
 ```yaml
 schedule:
-  - cron: "0 1 * * *"
+  - cron: "0 1 * * 3"
+  - cron: "0 1 * * 0"
 ```
 
-GitHub Actions 的 cron 使用 UTC 时间，`0 1 * * *` 对应北京时间 09:00。
+GitHub Actions 的 cron 使用 UTC 时间，`0 1 * * 3` 对应北京时间周三 09:00，`0 1 * * 0` 对应北京时间周日 09:00。
 
 ## 本地运行
 
@@ -216,6 +220,12 @@ python3 -m paper_agents run --config config.json --days 7
 python3 -m paper_agents run --config config.json --since-last-sunday --timezone Asia/Shanghai
 ```
 
+按半周窗口抓取论文，周一到周三从周一开始，周四到周日从周四开始：
+
+```bash
+python3 -m paper_agents run --config config.json --split-week-window --timezone Asia/Shanghai
+```
+
 同时导出完整 JSON：
 
 ```bash
@@ -260,7 +270,8 @@ python3 -m unittest discover -s tests -p 'test_*.py'
     "max_results_per_category": 50,
     "vla_keywords": ["vision-language-action", "embodied ai", "robot learning"],
     "cv_keywords": ["segmentation", "object detection", "vision-language"],
-    "world_model_keywords": ["world model", "latent dynamics", "future prediction"]
+    "world_model_keywords": ["world model", "latent dynamics", "future prediction"],
+    "world_action_model_keywords": ["world action model", "action-centric world model"]
   },
   "llm": {
     "enabled": true,
@@ -280,6 +291,7 @@ python3 -m unittest discover -s tests -p 'test_*.py'
 - 想多抓一点：提高 `max_results_per_category`
 - 想更偏 VLA：扩充 `vla_keywords`
 - 想更偏 World Model：扩充 `world_model_keywords`
+- 想更偏 World Action Model：扩充 `world_action_model_keywords`
 - 想看更多论文：提高 `publisher.top_k`
 - 想调试分类：把 `include_irrelevant` 设为 `true`
 
@@ -324,7 +336,7 @@ Variable: OPENAI_MODEL
 飞书群会收到类似：
 
 ```text
-论文日报 | VLA / CV / World Model | 2026-05-01
+论文日报 | VLA / CV / World Model / World Action Model | 2026-05-01
 今日精选 12 篇
 
 1. Paper Title
@@ -413,10 +425,10 @@ git push
 crontab -e
 ```
 
-每天 9 点运行：
+每周三和周日 9 点运行：
 
 ```cron
-0 9 * * * cd "/path/to/AutoPaper" && DEEPSEEK_API_KEY="xxx" /usr/bin/python3 -m paper_agents run --config config.json >> agent.log 2>&1
+0 9 * * 3,0 cd "/path/to/AutoPaper" && DEEPSEEK_API_KEY="xxx" /usr/bin/python3 -m paper_agents run --config config.json --split-week-window --timezone Asia/Shanghai >> agent.log 2>&1
 ```
 
 ## 后续扩展建议

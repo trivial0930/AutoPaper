@@ -29,7 +29,12 @@ def main() -> None:
         action="store_true",
         help="Collect from the most recent Sunday 00:00 to the run date, using --timezone.",
     )
-    run_parser.add_argument("--timezone", default="Asia/Shanghai", help="Timezone for --date and --since-last-sunday.")
+    run_parser.add_argument(
+        "--split-week-window",
+        action="store_true",
+        help="Collect Mon-Wed from Monday 00:00, and Thu-Sun from Thursday 00:00, using --timezone.",
+    )
+    run_parser.add_argument("--timezone", default="Asia/Shanghai", help="Timezone for date-window options.")
     run_parser.add_argument("--no-llm", action="store_true", help="Disable OpenAI summarization/classification.")
     run_parser.add_argument("--skip-semantic", action="store_true", help="Skip Semantic Scholar enrichment.")
     run_parser.add_argument("--json-out", help="Optional path for full JSON output.")
@@ -82,7 +87,7 @@ def run(args: argparse.Namespace) -> None:
         config.semantic_scholar.enabled = False
 
     run_date = _parse_run_date(args.date, args.timezone)
-    start_date = _last_sunday_start(run_date, args.timezone) if args.since_last_sunday else None
+    start_date = _start_date_for_run(args, run_date)
     workflow = WorkflowAgent(config)
     all_papers, selected, report = workflow.run(
         run_date=run_date,
@@ -131,6 +136,14 @@ def notify_feishu(args: argparse.Namespace) -> None:
     notifier.run(selected, run_date=_parse_run_date(args.date, args.timezone), report=report)
 
 
+def _start_date_for_run(args: argparse.Namespace, run_date: datetime) -> datetime | None:
+    if args.split_week_window:
+        return _split_week_start(run_date, args.timezone)
+    if args.since_last_sunday:
+        return _last_sunday_start(run_date, args.timezone)
+    return None
+
+
 def summarize_json(args: argparse.Namespace) -> None:
     config = load_config(args.config if Path(args.config).exists() else None)
     json_path = Path(args.json)
@@ -162,6 +175,17 @@ def _last_sunday_start(run_date: datetime, timezone_name: str) -> datetime:
     days_since_sunday = (local_date.weekday() + 1) % 7
     sunday = local_date - timedelta(days=days_since_sunday)
     return datetime.combine(sunday, time.min, tzinfo=tz)
+
+
+def _split_week_start(run_date: datetime, timezone_name: str) -> datetime:
+    tz = ZoneInfo(timezone_name)
+    local_date = run_date.astimezone(tz).date()
+    weekday = local_date.weekday()
+    if weekday <= 2:
+        start_date = local_date - timedelta(days=weekday)
+    else:
+        start_date = local_date - timedelta(days=weekday - 3)
+    return datetime.combine(start_date, time.min, tzinfo=tz)
 
 
 if __name__ == "__main__":

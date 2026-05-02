@@ -66,12 +66,12 @@ class ClassifierAgent:
     def _classify_with_llm(self, paper: Paper) -> bool:
         system = (
             "你是一个论文筛选 Agent，专门判断论文是否属于 VLA、CV、Robot Learning、"
-            "Embodied AI、Multimodal AI 或 World Model。只输出 JSON。"
+            "Embodied AI、Multimodal AI、World Model 或 World Action Model。只输出 JSON。"
         )
         user = f"""
 请阅读标题和摘要，输出 JSON：
 {{
-  "tags": ["VLA"、"CV"、"World Model" 等标签],
+  "tags": ["VLA"、"CV"、"World Model"、"World Action Model" 等标签],
   "relevance_score": 0 到 5 的数字,
   "priority": "must_read" | "read" | "skim" | "skip",
   "reason": "不超过 30 个中文字符的理由"
@@ -101,10 +101,15 @@ class ClassifierAgent:
         vla_hits = [keyword for keyword in self.config.sources.vla_keywords if keyword.lower() in text]
         cv_hits = [keyword for keyword in self.config.sources.cv_keywords if keyword.lower() in text]
         world_model_hits = [keyword for keyword in self.config.sources.world_model_keywords if keyword.lower() in text]
+        world_action_hits = [keyword for keyword in self.config.sources.world_action_model_keywords if keyword.lower() in text]
 
         if vla_hits:
             tags.append("VLA")
             score += min(3.5, 1.5 + len(vla_hits) * 0.7)
+        if world_action_hits:
+            tags.append("World Action Model")
+            tags.append("World Model")
+            score += min(3.6, 1.7 + len(world_action_hits) * 0.7)
         if world_model_hits:
             tags.append("World Model")
             score += min(3.3, 1.4 + len(world_model_hits) * 0.6)
@@ -292,7 +297,7 @@ class NotifierAgent:
 
     def _render_text(self, papers: list[Paper], run_date: datetime, report: Path | None) -> str:
         lines = [
-            f"论文日报 | VLA / CV / World Model | {run_date.date().isoformat()}",
+            f"论文日报 | VLA / CV / World Model / World Action Model | {run_date.date().isoformat()}",
             f"今日精选 {len(papers)} 篇",
             "",
         ]

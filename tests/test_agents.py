@@ -5,7 +5,7 @@ import unittest
 from datetime import datetime, timezone
 from unittest.mock import patch
 
-from paper_agents.__main__ import _last_sunday_start
+from paper_agents.__main__ import _last_sunday_start, _split_week_start
 from paper_agents.agents import ClassifierAgent, CuratorAgent, NotifierAgent, SummarizerAgent
 from paper_agents.clients import HTTPRequestError, OpenAIClient, SemanticScholarClient
 from paper_agents.config import AppConfig, SourceConfig
@@ -54,6 +54,22 @@ class AgentTests(unittest.TestCase):
         ClassifierAgent(config).classify(paper)
         self.assertIn("World Model", paper.tags)
         self.assertGreaterEqual(paper.relevance_score, 2.5)
+
+    def test_classifier_finds_world_action_model_paper(self) -> None:
+        config = self.make_config()
+        config.sources.world_action_model_keywords = ["world action model", "action-centric world model"]
+        paper = Paper(
+            paper_id="2501.00004",
+            title="World Action Modeling for Robotic Manipulation",
+            authors=[],
+            abstract="We build an action-centric world model for robot planning.",
+            published="",
+            updated="",
+            categories=["cs.RO"],
+        )
+        ClassifierAgent(config).classify(paper)
+        self.assertIn("World Action Model", paper.tags)
+        self.assertIn("World Model", paper.tags)
 
     def test_curator_skips_irrelevant_by_default(self) -> None:
         config = self.make_config()
@@ -125,6 +141,16 @@ class AgentTests(unittest.TestCase):
         run_date = datetime(2026, 4, 30, 15, 0, tzinfo=timezone.utc)
         start = _last_sunday_start(run_date, "Asia/Shanghai")
         self.assertEqual(start.isoformat(), "2026-04-26T00:00:00+08:00")
+
+    def test_split_week_start_uses_monday_for_wednesday_run(self) -> None:
+        run_date = datetime(2026, 5, 6, 1, 0, tzinfo=timezone.utc)
+        start = _split_week_start(run_date, "Asia/Shanghai")
+        self.assertEqual(start.isoformat(), "2026-05-04T00:00:00+08:00")
+
+    def test_split_week_start_uses_thursday_for_sunday_run(self) -> None:
+        run_date = datetime(2026, 5, 10, 1, 0, tzinfo=timezone.utc)
+        start = _split_week_start(run_date, "Asia/Shanghai")
+        self.assertEqual(start.isoformat(), "2026-05-07T00:00:00+08:00")
 
 
 if __name__ == "__main__":
